@@ -10,7 +10,7 @@ export const Routes = () => {
     return (
         <Router history={history}>
             <div>
-                <Route path="/" render={(props) => <App />} />
+                <Route path="/" render={(props) => <Info />} />
                 <Route path="/home" render={(props) => <Home />} />
                 <Route path="/info" render={(props) => <Info />} />
                 <Route path="/sheet" render={(props) => <CharSheet />} />
