@@ -8,15 +8,13 @@ import Nav from './components/Nav/Nav';
 class App extends Component {
   render() {
     return (
-
-      
-      // <React.Fragment>
-      //   <SNav />
-      //   <Nav />
-      //   <Para />
-      //   <Nav />
-      //   <Para />
-      // </React.Fragment>
+      <React.Fragment>
+        <SNav />
+         <Nav />
+         <Para />
+         <Nav />
+         <Para />
+       </React.Fragment>
     );
   }
 }

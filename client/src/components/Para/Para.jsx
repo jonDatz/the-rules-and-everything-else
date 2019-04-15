@@ -15,7 +15,7 @@ const Para = () => {
                         </p>
                     </div>
                 </div>
-            {/* <Parallax imageSrc="http://materializecss.com/images/parallax2.jpg" /> */}
+            <Parallax imageSrc="http://materializecss.com/images/parallax2.jpg" />
         </div>
             )
 }
