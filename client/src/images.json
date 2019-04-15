@@ -1,0 +1,15 @@
+[
+    {
+      "id": 1,
+      "name": "dragon",
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Scale-adult-preview.png/1920px-Scale-adult-preview.png",
+      "altText": "Dragon"
+    },
+    {
+      "id": 2,
+      "name": "castle",
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Willem_Troost-_fantasy_Rhine_landscape_with_castle_town.jpg/1191px-Willem_Troost-_fantasy_Rhine_landscape_with_castle_town.jpg",
+      "altText": "castle"
+    }  
+]
+  
