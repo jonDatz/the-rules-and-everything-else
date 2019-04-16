@@ -1,7 +1,5 @@
 import auth0 from 'auth0-js';
-const history = require('history').createBrowserHistory();
-
-
+import history from '../history';
 
 export default class Auth {
     accessToken;

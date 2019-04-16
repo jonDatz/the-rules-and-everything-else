@@ -3,18 +3,7 @@ import { Navbar, NavItem } from 'react-materialize';
 import "./style.css"
 
 class Nav extends Component {
-    goTo(route) {
-        this.props.history.replace(`/${route}`)
-    };
-
-    login() {
-        this.props.auth.login();
-    };
-
-    logout() {
-        this.props.auth.logout();
-    };
-
+ 
     render() {
         const {isAuthenticated} = this.props.auth;
         console.log(isAuthenticated);

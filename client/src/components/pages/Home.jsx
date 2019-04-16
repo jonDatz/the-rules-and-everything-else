@@ -1,10 +1,24 @@
 import React from "react";
 
-function Home() {
+function Home(props) {
+  const {isAuthenticated} = props.auth;
   return (
-    <React.Fragment>
       <div>
         <h1>Home Page</h1>
+        {
+          !isAuthenticated() && (
+            <h2>
+              Ayyyyy, you aren't logged in
+            </h2>
+          )
+        }
+        {
+          isAuthenticated() && (
+            <h2>
+              Yay!!!!! you are logged in
+            </h2>
+          )
+        }
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque velit, lobortis ut magna
           varius, blandit rhoncus sem. Morbi lacinia nisi ac dui fermentum, sed luctus urna tincidunt.
@@ -16,7 +30,6 @@ function Home() {
           malesuada fames ac ante ipsum primis in faucibus.
       </p>
       </div>
-    </React.Fragment>
   );
 }
 

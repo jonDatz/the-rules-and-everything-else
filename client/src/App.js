@@ -33,7 +33,7 @@ class App extends Component {
     const {isAuthenticated} = this.props.auth;
 
     return (
-      <div>
+      <React.Fragment>
         <Snav />
         <div className="sidenav-spacing">
           <Navbar brand={< button />} alignLinks="right" >
@@ -64,7 +64,7 @@ class App extends Component {
 
           </Navbar >
         </div>
-      </div>
+      </React.Fragment>
     );
   }
 }
