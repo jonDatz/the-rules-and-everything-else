@@ -7,9 +7,11 @@ const Nav = () => {
     return (
         <Navbar brand={<a />} alignLinks="right">
 
-            <NavItem onClick={onClick}> Getting started</NavItem>
+            <NavItem onClick={onClick} href="charactersheet">
+                Create a Character
+            </NavItem>
 
-            <NavItem href="components.html">Components</NavItem>
+            <NavItem href="/compendium">Compendium</NavItem>
 
         </Navbar>
             )
