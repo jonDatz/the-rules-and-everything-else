@@ -7,11 +7,10 @@ const SNav = () => {
 
     return (
         <div id="snav">
-        <SideNav trigger={<Button />}  options={{closeOnClick: true, draggable: true}} class="sidenav sidenav-fixed">
+        <SideNav trigger={<Button />}  options={{closeOnClick: true, draggable: true}} className="sidenav sidenav-fixed">
 
             <SideNavItem userView user={{
                 background: 'https://placeimg.com/640/480/tech',
-                image: {logo},
                 name: 'John Doe'
             }} />
 

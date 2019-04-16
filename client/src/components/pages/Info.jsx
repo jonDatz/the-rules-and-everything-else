@@ -7,12 +7,11 @@ import Nav from '../Nav/Nav';
 function Info() {
   return (
     <React.Fragment>
-    <Head />
-    <Nav />
-    <Para />
-    <Nav />
-    <Para />
-  </React.Fragment>
+      <Para />
+      <Head />
+
+      <Para />
+    </React.Fragment>
   );
 }
 
