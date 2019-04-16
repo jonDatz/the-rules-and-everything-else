@@ -24,16 +24,6 @@ class App extends Component {
           </div>
         </React.Fragment>
       </Router>
-
-
-      
-      // <React.Fragment>
-      //   <SNav />
-      //   <Nav />
-      //   <Para />
-      //   <Nav />
-      //   <Para />
-      // </React.Fragment>
     );
   }
 }
