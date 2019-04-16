@@ -33,7 +33,7 @@ export default class Auth {
   handleAuthentication() {
     this.auth0.parseHash((err, authResult) => {
       if (authResult && authResult.accessToken && authResult.idToken) {
-        console.log('went to setSession');
+        console.log('handle went to setSession');
         this.setSession(authResult);
       } else if (err) {
         history.replace('/home');
@@ -61,6 +61,8 @@ export default class Auth {
     this.idToken = authResult.idToken;
     this.expiresAt = expiresAt;
 
+    console.log('set session ran');
+    console.log(history);
     // navigate to the home route
     history.replace('/home');
   }
@@ -68,6 +70,7 @@ export default class Auth {
   renewSession() {
     this.auth0.checkSession({}, (err, authResult) => {
        if (authResult && authResult.accessToken && authResult.idToken) {
+         console.log('renew Ran to set');
          this.setSession(authResult);
        } else if (err) {
          this.logout();
@@ -97,6 +100,7 @@ export default class Auth {
   isAuthenticated() {
     // Check whether the current time is past the
     // access token's expiry time
+    console.log('authentication ran');
     let expiresAt = this.expiresAt;
     return new Date().getTime() < expiresAt;
   }
