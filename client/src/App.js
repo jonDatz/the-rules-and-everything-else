@@ -1,29 +1,70 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Home from "./components/pages/Home";
-import CharSheet from "./components/pages/CharSheet";
-import Info from "./components/pages/Info";
 import Snav from "./components/SNav/SNav";
-import Nav from "./components/Nav/Nav";
+import { Navbar, NavItem } from 'react-materialize';
+// import Nav from "./components/Nav/Nav";
 import './App.css';
 
-
 class App extends Component {
+  goTo(route) {
+    this.props.history.replace(`/${route}`)
+  };
+
+  login() {
+    this.props.auth.login();
+  };
+
+  logout() {
+    this.props.auth.logout();
+  };
+
+  componentDidMount() {
+    console.log('app mounted')
+    const { renewSession } = this.props.auth;
+
+    console.log(renewSession);
+
+    if (localStorage.getItem('isLoggedIn') === 'true') {
+      console.log('mount ran to renew');
+      renewSession();
+    }
+  }
+
   render() {
+    const {isAuthenticated} = this.props.auth;
+
     return (
-      <Router>
-        <React.Fragment>
-          <Snav />
-          <div className="sidenav-spacing">
-          <Nav />
-          <Switch>
-            <Route exact path="/" component={Home} />
-            <Route exact path="/charactersheet" component={CharSheet} />
-            <Route exact path="/compendium" component={Info} />
-          </Switch>
-          </div>
-        </React.Fragment>
-      </Router>
+      <React.Fragment>
+        <Snav />
+        <div className="sidenav-spacing">
+          <Navbar brand={< button />} alignLinks="right" >
+            {
+              !isAuthenticated() && (
+
+                <NavItem onClick={this.login.bind(this)}>
+                  Login
+                        </NavItem>
+              )
+            }
+            {
+              isAuthenticated() && (
+                <NavItem onClick={this.logout.bind(this)}>
+                  Logout
+                        </NavItem>
+              )
+            }
+            {
+              isAuthenticated() && (
+                <NavItem onClick={this.goTo.bind(this, 'charactersheet')}>
+                  Create a Character
+                        </NavItem>
+              )
+            }
+
+            <NavItem onClick={this.goTo.bind(this, 'compendium')}>Compendium</NavItem>
+
+          </Navbar >
+        </div>
+      </React.Fragment>
     );
   }
 }
