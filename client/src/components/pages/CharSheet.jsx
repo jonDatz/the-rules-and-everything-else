@@ -156,6 +156,7 @@ class App extends Component {
   render() {
     return (
       <React.Fragment>
+      <div className="sidenav-spacing">
         <DragDropContext onDragEnd={this.onDragEnd}>
           <div className='container'>
             <div className='row'>
@@ -191,6 +192,7 @@ class App extends Component {
             </div>
           </div>
         </DragDropContext>
+      </div>
       </React.Fragment>
     );
   }

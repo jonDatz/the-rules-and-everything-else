@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Navbar, NavItem } from 'react-materialize';
+import { Navbar, NavItem, Button } from 'react-materialize';
 import "./style.css"
 
 class Nav extends Component {
@@ -8,20 +8,20 @@ class Nav extends Component {
         const {isAuthenticated} = this.props.auth;
         console.log(isAuthenticated);
         return (
-            <Navbar brand={< button />} alignLinks="right" >
+            <Navbar alignLinks="right" >
             {
                     !isAuthenticated() && (
                         
-                        <NavItem onClick={this.login.bind(this)}>
-                            Login
-                        </NavItem>
+                    <Button waves="light" style={{ marginRight: "5px" }}>
+                        Login
+                    </Button>
                     )
                 }
                 {
                     isAuthenticated() && (
-                        <NavItem onClick={this.logout.bind(this)}>
+                        <Button waves="light" style={{ marginRight: "5px" }}>
                             Logout
-                        </NavItem>
+                        </Button>
                     )
                 }
                 {

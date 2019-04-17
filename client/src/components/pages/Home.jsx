@@ -3,7 +3,8 @@ import React from "react";
 function Home(props) {
   const {isAuthenticated} = props.auth;
   return (
-      <div>
+    <React.Fragment>
+      <div className="sidenav-spacing">
         <h1>Home Page</h1>
         {
           !isAuthenticated() && (
@@ -30,6 +31,7 @@ function Home(props) {
           malesuada fames ac ante ipsum primis in faucibus.
       </p>
       </div>
+      </React.Fragment>
   );
 }
 

@@ -3,14 +3,17 @@ import React from 'react';
 import Head from "../Head/Head";
 import Para from "../Para/Para";
 import Nav from '../Nav/Nav';
+import TabNav from "../TabNav/TabNav"
 
-function Info() {
+function Info(props) {
   return (
     <React.Fragment>
-      <Para />
-      <Head />
-
-      <Para />
+      <div className="sidenav-spacing">
+        <Head />
+        <TabNav />
+        <Para />
+        <Para />
+      </div>
     </React.Fragment>
   );
 }
