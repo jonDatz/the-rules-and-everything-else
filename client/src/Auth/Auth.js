@@ -1,5 +1,6 @@
 import auth0 from 'auth0-js';
 import history from '../history';
+import {AUTH_CONFIG} from './auth0-variables';
 
 export default class Auth {
     accessToken;
@@ -7,9 +8,9 @@ export default class Auth {
     expiresAt;
 
   auth0 = new auth0.WebAuth({
-    domain: 'dnd-app.auth0.com',
-    clientID: 'Gm06W9OWM3oG7oA4uGE9keaaJ6wi5yeg',
-    redirectUri: 'http://localhost:3000/callback',
+    domain: AUTH_CONFIG.domain,
+    clientID: AUTH_CONFIG.clientId,
+    redirectUri: AUTH_CONFIG.callbackUrl,
     responseType: 'token id_token',
     scope: 'openid'
   });
