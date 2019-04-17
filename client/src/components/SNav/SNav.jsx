@@ -1,32 +1,32 @@
-import React from "react";
+import React, {Component} from "react";
 import { SideNav, Button, SideNavItem } from 'react-materialize';
-import logo from './logo.svg';
 import "./style.css"
 
-const SNav = () => {
+class SNav extends Component {
+    goTo(route) {
+        this.props.history.replace(`/${route}`)
+      };
 
-    return (
-        <div id="snav">
-        <SideNav trigger={<Button />}  options={{closeOnClick: true, draggable: true}} className="sidenav sidenav-fixed">
+    render () {
+        return (
+            <div id="snav">
+            <SideNav  options={{closeOnClick: true, draggable: true}} class="sidenav sidenav-fixed">
 
-            <SideNavItem userView user={{
-                background: 'https://placeimg.com/640/480/tech',
-                name: 'John Doe'
-            }} />
+                <SideNavItem userView user={{
+                    background: 'https://placeimg.com/640/480/tech',
+                    name: 'John Doe'
+                }} />
 
-            <SideNavItem href="#!icon" icon="cloud">First Link With Icon</SideNavItem>
+                <SideNavItem onClick={this.goTo.bind(this, 'home')}>Home</SideNavItem>
 
-            <SideNavItem href="#!second">Second Link</SideNavItem>
+                <SideNavItem onClick={this.goTo.bind(this, 'compendium')}>Beginner's Compendium</SideNavItem>
 
-            <SideNavItem divider />
+                <SideNavItem waves onClick={this.goTo.bind(this, 'charactersheet')}>Custom Character Sheet</SideNavItem>
 
-            <SideNavItem subheader>Subheader</SideNavItem>
-
-            <SideNavItem waves href="#!third">Third Link With Waves</SideNavItem>
-
-        </SideNav>
-        </div>
-            )
+            </SideNav>
+            </div>
+        )
+    }
 }
 
 export default SNav;
