@@ -1,16 +1,26 @@
 import auth0 from 'auth0-js';
 import history from '../history';
-import {AUTH_CONFIG} from './auth0-variables';
+// import {AUTH_CONFIG} from './auth0-variables';
 
 export default class Auth {
     accessToken;
     idToken;
     expiresAt;
 
+    // localhost version
+  // auth0 = new auth0.WebAuth({
+  //   domain: AUTH_CONFIG.domain,
+  //   clientID: AUTH_CONFIG.clientId,
+  //   redirectUri: AUTH_CONFIG.callbackUrl,
+  //   responseType: 'token id_token',
+  //   scope: 'openid'
+  // });
+
+  // heroku version
   auth0 = new auth0.WebAuth({
-    domain: AUTH_CONFIG.domain,
-    clientID: AUTH_CONFIG.clientId,
-    redirectUri: AUTH_CONFIG.callbackUrl,
+    domain: REACT_APP_domain,
+    clientID: REACT_APP_clientId,
+    redirectUri: REACT_APP_callbackUrl,
     responseType: 'token id_token',
     scope: 'openid'
   });
