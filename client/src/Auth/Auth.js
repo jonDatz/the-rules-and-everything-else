@@ -1,6 +1,6 @@
 import auth0 from 'auth0-js';
 import history from '../history';
-
+import {AUTH_CONFIG} from './auth0-variables';
 
 export default class Auth {
     accessToken;
@@ -8,9 +8,9 @@ export default class Auth {
     expiresAt;
 
   auth0 = new auth0.WebAuth({
-    domain: process.env.REACT_APP_domain,
-    clientID: process.env.REACT_APP_clientId,
-    redirectUri: process.env.REACT_APP_callbackUrl,
+    domain: AUTH_CONFIG.domain,
+    clientID: AUTH_CONFIG.clientId,
+    redirectUri: AUTH_CONFIG.callbackUrl,
     responseType: 'token id_token',
     scope: 'openid'
   });
@@ -63,7 +63,7 @@ export default class Auth {
     console.log('set session ran');
     console.log(history);
     // navigate to the home route
-    history.replace('/home');
+    history.replace('/');
   }
 
   renewSession() {
@@ -89,11 +89,11 @@ export default class Auth {
     localStorage.removeItem('isLoggedIn');
 
     this.auth0.logout({
-      return_to: window.location.origin
+      return_to: 'http://localhost:3000/'
     });
 
     // navigate to the home route
-    history.replace('/home');
+    history.replace('/');
   }
 
   isAuthenticated() {
