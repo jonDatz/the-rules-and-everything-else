@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-
 import { DragDropContext } from "react-beautiful-dnd";
 import Item from '../Item/Item';
 import List from '../List/List';
 import Bank from '../Bank/Bank';
+import Html2Canvas from 'html2canvas';
+import jsPDF from 'jspdf';
 
 let list1Array = [{ id: 'listItem-1', content: 'first item 1' }];
 
@@ -48,6 +49,16 @@ class App extends Component {
     },
     idCounter: 18,
     listOrder: ['list_1', 'list_2', 'list_3']
+  }
+
+  print = () => {
+    const filename = 'customSheet.pdf';
+  
+    Html2Canvas(document.querySelector('.printTarget')).then(canvas => {
+      let pdf = new jsPDF('p', 'mm', 'a4');
+      pdf.addImage(canvas.toDataURL('image/png'), 'PNG', 0, 0, 211, 298);
+      pdf.save(filename);
+    });
   }
 
   onDragEnd = result => {
@@ -99,7 +110,7 @@ class App extends Component {
       const bankItems = Array.from(start.items);
       const [removed] = bankItems.splice(source.index, 1);
       const newItem = { id: this.state.idCounter + 1, content: removed.content }
-      bankItems.splice(source.index, 1, newItem);
+      bankItems.splice(source.index, 0, newItem);
       const newBank = {
         ...start,
         items: bankItems
@@ -167,7 +178,7 @@ class App extends Component {
               </Bank>
             </div>
             <br />
-            <div className='row'>
+            <div className='row printTarget'>
               <div className='col s4'>
                 <List id='list_1'>
                   {this.state.lists.list_1.items.map((item, index) => (
@@ -190,6 +201,7 @@ class App extends Component {
                 </List>
               </div>
             </div>
+            <button onClick={this.print.bind(this)}>Create PDF from List</button>
           </div>
         </DragDropContext>
       </div>
