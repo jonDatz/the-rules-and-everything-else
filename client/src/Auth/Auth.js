@@ -99,7 +99,7 @@ export default class Auth {
     localStorage.removeItem('isLoggedIn');
 
     this.auth0.logout({
-      return_to: 'http://localhost:3000/'
+      return_to: 'https://the-rules-and-everythins-else.herokuapp.com/'
     });
 
     // navigate to the home route
