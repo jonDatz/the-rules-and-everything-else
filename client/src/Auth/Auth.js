@@ -18,9 +18,9 @@ export default class Auth {
 
   // heroku version
   auth0 = new auth0.WebAuth({
-    domain: REACT_APP_domain,
-    clientID: REACT_APP_clientId,
-    redirectUri: REACT_APP_callbackUrl,
+    domain: process.env.REACT_APP_domain,
+    clientID: process.env.REACT_APP_clientId,
+    redirectUri: process.env.REACT_APP_callbackUrl,
     responseType: 'token id_token',
     scope: 'openid'
   });
