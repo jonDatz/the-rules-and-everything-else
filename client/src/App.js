@@ -36,7 +36,7 @@ class App extends Component {
       <React.Fragment>
         <Snav auth={this.props.auth} {...this.props} />
         <div className="sidenav-spacing">
-          <Navbar alignLinks="right" >
+          <Navbar alignLinks="right" className="grey darken-4">
             {
               !isAuthenticated() && (
 

@@ -10,13 +10,13 @@ function Item(props) {
             {(provided, snapshot) => (
                 props.location === 'bank' ? (
                     <div className="col s3 m2">
-                        <div className="card-panel teal" ref={provided.innerRef} {...provided.draggableProps}  {...provided.dragHandleProps}>
+                        <div className="card-panel teal cardCharSheet" ref={provided.innerRef} {...provided.draggableProps}  {...provided.dragHandleProps}>
                             <span className="white-text">{props.content}</span>
                         </div>
                     </div>
                 ) : (
 
-                        <div className="card-panel teal" ref={provided.innerRef} {...provided.draggableProps}  {...provided.dragHandleProps}>
+                        <div className="card-panel teal cardCharSheet" ref={provided.innerRef} {...provided.draggableProps}  {...provided.dragHandleProps}>
                             <span className="white-text">{props.content}</span>
                         </div>
                     ))
