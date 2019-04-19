@@ -10,18 +10,14 @@ class SNav extends Component {
     render () {
         return (
             <div id="snav">
-            <SideNav  options={{closeOnClick: true, draggable: true}} class="sidenav sidenav-fixed">
+            <SideNav  options={{closeOnClick: true, draggable: true}} className="sidenav sidenav-fixed grey lighten-2">
 
-                <SideNavItem userView user={{
-                    background: 'https://placeimg.com/640/480/tech',
-                    name: 'John Doe'
-                }} />
 
-                <SideNavItem onClick={this.goTo.bind(this, 'home')}>Home</SideNavItem>
+                <SideNavItem onClick={this.goTo.bind(this, 'home')}><span  className="blue-grey-text text-lighten-5">Home</span> </SideNavItem>
 
-                <SideNavItem onClick={this.goTo.bind(this, 'compendium')}>Beginner's Compendium</SideNavItem>
+                <SideNavItem onClick={this.goTo.bind(this, 'compendium')}><span  className="blue-grey-text text-lighten-5">Beginner's Compendium</span></SideNavItem>
 
-                <SideNavItem waves onClick={this.goTo.bind(this, 'charactersheet')}>Custom Character Sheet</SideNavItem>
+                <SideNavItem waves onClick={this.goTo.bind(this, 'charactersheet')}><span  className="blue-grey-text text-lighten-5">Custom Character Sheet</span></SideNavItem>
 
             </SideNav>
             </div>
