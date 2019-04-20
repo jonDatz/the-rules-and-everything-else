@@ -1,6 +1,6 @@
 import auth0 from 'auth0-js';
 import history from '../history';
-import {AUTH_CONFIG} from './auth0-variables';
+// import {AUTH_CONFIG} from './auth0-variables';
 
 export default class Auth {
     accessToken;
@@ -9,22 +9,22 @@ export default class Auth {
     userProfile;
 
     // localhost version
-  auth0 = new auth0.WebAuth({
-    domain: AUTH_CONFIG.domain,
-    clientID: AUTH_CONFIG.clientId,
-    redirectUri: AUTH_CONFIG.callbackUrl,
-    responseType: 'token id_token',
-    scope: 'openid profile'
-  });
-
-  // heroku version
   // auth0 = new auth0.WebAuth({
-  //   domain: process.env.REACT_APP_domain,
-  //   clientID: process.env.REACT_APP_clientId,
-  //   redirectUri: process.env.REACT_APP_callbackUrl,
+  //   domain: AUTH_CONFIG.domain,
+  //   clientID: AUTH_CONFIG.clientId,
+  //   redirectUri: AUTH_CONFIG.callbackUrl,
   //   responseType: 'token id_token',
   //   scope: 'openid profile'
   // });
+
+  // heroku version
+  auth0 = new auth0.WebAuth({
+    domain: process.env.REACT_APP_domain,
+    clientID: process.env.REACT_APP_clientId,
+    redirectUri: process.env.REACT_APP_callbackUrl,
+    responseType: 'token id_token',
+    scope: 'openid profile'
+  });
 
   constructor() {
     this.login = this.login.bind(this);
@@ -111,7 +111,7 @@ export default class Auth {
     localStorage.removeItem('isLoggedIn');
 
     this.auth0.logout({
-      return_to: 'https://the-rules-and-everythins-else.herokuapp.com/'
+      return_to: 'https://the-rules-and-everything-else.herokuapp.com/'
     });
 
     // navigate to the home route
