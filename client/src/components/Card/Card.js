@@ -46,7 +46,7 @@ function Card(props) {
                                     </tbody>
                                 </table>
                                 <p>{props.spell.desc}</p>
-                                
+
                                 <div className="card-action">
                                     <a href="#">Magic Button</a>
                                 </div>
@@ -54,21 +54,34 @@ function Card(props) {
                         </div>
                     </div>)
             }
-            { props.articles &&
-            (<div className="col s12 m7">
-                <div className="card blue-grey darken-1">
-                    <div className="card-content white-text">
-                        <span className="card-title">Spell of the Day</span>
-                        <p>Thanks for Visiting us! </p>
-                        <p>Sorry, Something went Wrong Loading your random spell :/ </p>
-                    </div>
-                    <div className="card-action">
-                        <a href="#">Magic Button</a>
+            {props.articles &&
+                (<div className="col s12 m7">
+                    <div className="card blue-grey darken-1">
+                        <div className="card-content white-text">
+                            <span className="card-title">Recent D&D articles</span>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Headline</th>
+                                        <th>Summary</th>
+                                        <th>Save</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {props.articles.map((element) => (
+                                    <tr>
+                                        <td><a href={element.link} target='_blank'>{element.headline}</a></td>
+                                        <td>{element.summary}</td>
+                                        <td><button>Save</button></td>
+                                    </tr>
+                                    ))}
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
-            </div>
-            )
-        }
+                )
+            }
         </React.Fragment>
     )
 };

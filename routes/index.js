@@ -1,8 +1,44 @@
+const cheerio = require('cheerio');
 const path = require("path");
 const router = require("express").Router();
 const axios = require('axios');
+const db = require("../models");
 
 // If no API routes are hit, send the React app
+
+router.get('/articles', function (req, res) {
+  db.Article.find()
+    .then(function (dbArticles) {
+      res.json(dbArticles)
+    });
+});
+
+router.get('/api/scrape', function (req, res) {
+
+  axios.get("http://dnd.wizards.com/articles").then(function (response) {
+    let $ = cheerio.load(response.data);
+
+    $('article div.text').each(function (i, element) {
+      let result = {};
+
+      result.headline = $(this).children('h4').text();
+
+      result.summary = $(this).children('div').text();
+      result.link = 'http://dnd.wizards.com' + $(this).children('h4').children('a').attr('href');
+
+      db.Article.create(result)
+        .then(function (dbArticle) {
+          // View the added result in the console
+        })
+        .catch(function (err) {
+          // If an error occurred, log it
+          console.log(err);
+        });
+    });
+    res.send('Scraped Articles, Chief')
+  });
+});
+
 const baseURL = 'http://dnd5eapi.co/api/';
 
 router.get('/api/random/spell', function (req, res) {

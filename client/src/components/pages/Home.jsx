@@ -36,19 +36,33 @@ class Home extends Component {
           error: error
         });
       });
+    fetch('/api/scrape')
+      .then(res => {
+        console.log(res);
+        fetch('/articles')
+          .then(res => {
+            return res.json()
+          })
+          .then(res => {
+            console.log(res);
+            this.setState({
+              articles: res
+            });
+            console.log(this.state);
+          })
+      });
   }
 
-
   render() {
-    
-    const { error, spell } = this.state;
+
+    const { error, spell, articles } = this.state;
 
     if (error) {
       return (
         <React.Fragment>
           <div className="sidenav-spacing">
             <h1>Home Page</h1>
-            
+
           </div>
         </React.Fragment>
       )
@@ -59,7 +73,7 @@ class Home extends Component {
             <h1>Home Page</h1>
             <div class="row">
               <Card spell={spell} classes={this.state.classes} school={this.state.school} />
-              <Card />
+              <Card articles={articles}/>
             </div>
           </div>
         </React.Fragment>
