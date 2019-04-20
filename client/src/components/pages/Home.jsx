@@ -40,7 +40,7 @@ class Home extends Component {
 
 
   render() {
-    const { isAuthenticated } = this.props.auth;
+    
     const { error, spell } = this.state;
 
     if (error) {
