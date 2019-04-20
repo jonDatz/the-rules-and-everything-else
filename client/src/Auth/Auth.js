@@ -6,6 +6,7 @@ export default class Auth {
     accessToken;
     idToken;
     expiresAt;
+    userProfile;
 
     // localhost version
   // auth0 = new auth0.WebAuth({
@@ -13,7 +14,7 @@ export default class Auth {
   //   clientID: AUTH_CONFIG.clientId,
   //   redirectUri: AUTH_CONFIG.callbackUrl,
   //   responseType: 'token id_token',
-  //   scope: 'openid'
+  //   scope: 'openid profile'
   // });
 
   // heroku version
@@ -22,7 +23,7 @@ export default class Auth {
     clientID: process.env.REACT_APP_clientId,
     redirectUri: process.env.REACT_APP_callbackUrl,
     responseType: 'token id_token',
-    scope: 'openid'
+    scope: 'openid profile'
   });
 
   constructor() {
@@ -33,6 +34,7 @@ export default class Auth {
     this.getAccessToken = this.getAccessToken.bind(this);
     this.getIdToken = this.getIdToken.bind(this);
     this.renewSession = this.renewSession.bind(this);
+    this.getProfile = this.getProfile.bind(this);
   }
 
   login() {
@@ -89,17 +91,27 @@ export default class Auth {
     });
   }
 
+  getProfile(cb) {
+    this.auth0.client.userInfo(this.accessToken, (err, profile) => {
+      if (profile) {
+        this.userProfile = profile;
+      }
+      cb(err, profile);
+    });
+  }
+
   logout() {
     // Remove tokens and expiry time
     this.accessToken = null;
     this.idToken = null;
     this.expiresAt = 0;
+    this.userProfile = null;
 
     // Remove isLoggedIn flag from localStorage
     localStorage.removeItem('isLoggedIn');
 
     this.auth0.logout({
-      return_to: 'https://the-rules-and-everythins-else.herokuapp.com/'
+      return_to: 'https://the-rules-and-everything-else.herokuapp.com/'
     });
 
     // navigate to the home route

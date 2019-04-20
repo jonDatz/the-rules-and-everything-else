@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Snav from "./components/SNav/SNav";
-import { Navbar, NavItem } from 'react-materialize';
-// import Nav from "./components/Nav/Nav";
+import Profile from './components/Profile/Profile';
 import './App.css';
 
 class App extends Component {
@@ -16,9 +15,10 @@ class App extends Component {
   logout() {
     this.props.auth.logout();
   };
-
+  
   componentDidMount() {
     console.log('app mounted')
+
     const { renewSession } = this.props.auth;
 
     console.log(renewSession);
@@ -30,39 +30,13 @@ class App extends Component {
   }
 
   render() {
-    const { isAuthenticated } = this.props.auth;
+    const {isAuthenticated} = this.props.auth;
 
     return (
       <React.Fragment>
         <Snav auth={this.props.auth} {...this.props} />
         <div className="sidenav-spacing">
-          <Navbar alignLinks="right" className="grey darken-4">
-            {
-              !isAuthenticated() && (
-
-                <NavItem onClick={this.login.bind(this)}>
-                  Login
-                        </NavItem>
-              )
-            }
-            {
-              isAuthenticated() && (
-                <NavItem onClick={this.logout.bind(this)}>
-                  Logout
-                        </NavItem>
-              )
-            }
-            {
-              isAuthenticated() && (
-                <NavItem onClick={this.goTo.bind(this, 'charactersheet')}>
-                  Create a Character
-                        </NavItem>
-              )
-            }
-
-            <NavItem onClick={this.goTo.bind(this, 'compendium')}>Compendium</NavItem>
-
-          </Navbar >
+        {isAuthenticated() && (<Profile auth={this.props.auth}/>)}
         </div>
       </React.Fragment>
     );
