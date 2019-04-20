@@ -36,21 +36,26 @@ class Home extends Component {
           error: error
         });
       });
-    fetch('/api/scrape')
-      .then(res => {
-        console.log(res);
-        fetch('/articles')
-          .then(res => {
-            return res.json()
-          })
-          .then(res => {
-            console.log(res);
-            this.setState({
-              articles: res
-            });
-            console.log(this.state);
-          })
-      });
+    if (!this.state.articles) {
+      fetch('/api/scrape')
+        .then(res => {
+          console.log(res);
+          fetch('/articles')
+            .then(res => {
+              return res.json()
+            })
+            .then(res => {
+              console.log(res);
+              this.setState({
+                articles: res
+              });
+              console.log(this.state);
+            })
+        });
+    } else {
+      console.log('Articles found')
+      console.log(this.state.articles)
+    }
   }
 
   render() {
@@ -73,7 +78,7 @@ class Home extends Component {
             <h1>Home Page</h1>
             <div class="row">
               <Card spell={spell} classes={this.state.classes} school={this.state.school} />
-              <Card articles={articles}/>
+              <Card articles={articles} />
             </div>
           </div>
         </React.Fragment>
