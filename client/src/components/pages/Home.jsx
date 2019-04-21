@@ -1,5 +1,9 @@
 import React, { Component } from "react";
 import Card from '../Card/Card';
+// import SpellCard from '../Card/SpellCard';
+// import ArtCard from '../Card/ArtCard';
+import Head from '../Head/Head';
+import { timingSafeEqual } from "crypto";
 
 class Home extends Component {
   state = {
@@ -36,6 +40,7 @@ class Home extends Component {
           error: error
         });
       });
+      
     fetch('/api/scrape')
       .then(res => {
         console.log(res);
@@ -70,10 +75,13 @@ class Home extends Component {
       return (
         <React.Fragment>
           <div className="sidenav-spacing">
-            <h1>Home Page</h1>
+              <Head />
             <div class="row">
               <Card spell={spell} classes={this.state.classes} school={this.state.school} />
               <Card articles={articles}/>
+              {/* <SpellCard spell={spell} classes={this.state.classes} school={this.state.school} /> */}
+
+
             </div>
           </div>
         </React.Fragment>

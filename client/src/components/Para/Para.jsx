@@ -6,7 +6,7 @@ const Para = () => {
 
     return (
         <div>
-            <Parallax imageSrc="https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Willem_Troost-_fantasy_Rhine_landscape_with_castle_town.jpg/1191px-Willem_Troost-_fantasy_Rhine_landscape_with_castle_town.jpg" />
+            <Parallax className="paraImportant" imageSrc="https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Willem_Troost-_fantasy_Rhine_landscape_with_castle_town.jpg/1191px-Willem_Troost-_fantasy_Rhine_landscape_with_castle_town.jpg" />
                 <div className="section white">
                     <div className="row container">
                         <h2 className="header">Parallax</h2>
@@ -15,7 +15,7 @@ const Para = () => {
                         </p>
                     </div>
                 </div>
-            <Parallax imageSrc="http://materializecss.com/images/parallax2.jpg" />
+            {/* <Parallax imageSrc="http://materializecss.com/images/parallax2.jpg" /> */}
         </div>
             )
 }

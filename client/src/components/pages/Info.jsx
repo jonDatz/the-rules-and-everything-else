@@ -7,10 +7,16 @@ function Info(props) {
   return (
     <React.Fragment>
       <div className="sidenav-spacing">
-        <Head />
+      <Head />
         <TabNav />
         <Para />
+        <TabNav />
         <Para />
+        <TabNav />
+        <Para />
+        <TabNav />
+        <Para />
+        <TabNav />
       </div>
     </React.Fragment>
   );
