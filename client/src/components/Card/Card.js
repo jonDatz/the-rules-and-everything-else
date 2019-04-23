@@ -82,7 +82,7 @@ function Card(props) {
                                                                 <tr key={index}>
                                                                     <td><a href={element.link} target='_blank'>{element.headline}</a></td>
                                                                     <td>{element.summary}</td>
-                                                                    <td><button data-id={element._id}>Save</button></td>
+                                                                    <td><button onClick={() => props.save(element._id, props.profile.name)}>Save</button></td>
                                                                 </tr>
                                                             ))}
                                                         </tbody>

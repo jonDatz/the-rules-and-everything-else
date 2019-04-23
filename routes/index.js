@@ -6,6 +6,13 @@ const db = require("../models");
 
 // If no API routes are hit, send the React app
 
+router.post('/user', function (req, res) {
+  db.User.findOneAndUpdate({email: req.body.user}, {}, {upsert: true})
+  .then(response => {
+    res.json(response)
+  });
+});
+
 router.get('/articles', function (req, res) {
   db.Article.find()
     .then(function (dbArticles) {
@@ -13,12 +20,14 @@ router.get('/articles', function (req, res) {
     });
 });
 
-router.post('/save', function (req, res) {
+router.post('/api/save', function (req, res) {
   console.log(req.body);
   console.log(req.body.articleId);
   console.log(req.body.user);
-  res.json({sent: true});
-  // db.User.findOneAndUpdate({email: req.user}, {$push : {articles: {_id: req.id}}})
+  db.User.findOneAndUpdate({email: req.body.user}, {$push : {articles: {_id: req.body.articleId}}}).then(response => {
+    console.log(response);
+    res.json(response);
+  })
 })
 
 router.get('/api/scrape', function (req, res) {

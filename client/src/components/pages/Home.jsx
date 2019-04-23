@@ -14,6 +14,27 @@ class Home extends Component {
     profile: {}
   };
 
+  saveArticle = (id, user) => {
+    const savedArticle = {
+      articleId: id,
+      user: user
+    };
+
+    fetch('/api/save', {
+      method: 'post',
+      headers: {
+        'Accept': 'application/json, text/plain, */*',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(savedArticle)
+    }).then(res => {
+      return res.json();
+    }).then(res => {
+      console.log(res)
+    });
+
+  };
+
   componentDidMount() {
     console.log('hey I mounted');
     fetch('/api/random/spell')
@@ -79,10 +100,10 @@ class Home extends Component {
           <div className="sidenav-spacing">
             <Head />
             <div className="row">
-              {isAuthenticated() && (<Profile auth={this.props.auth} spell={spell} classes={this.state.classes} school={this.state.school} articles={articles} />)}
+              {isAuthenticated() && (<Profile save={this.saveArticle} auth={this.props.auth} spell={spell} classes={this.state.classes} school={this.state.school} articles={articles} />)}
               {!isAuthenticated() && (
                 <Card auth={this.props.auth} spell={spell} classes={this.state.classes} school={this.state.school} />)}
-              {!isAuthenticated() && (<Card articles={articles} auth={this.props.auth}/>)}
+              {!isAuthenticated() && (<Card save={this.saveArticle} articles={articles} auth={this.props.auth} />)}
               {/* <SpellCard spell={spell} classes={this.state.classes} school={this.state.school} /> */}
 
 
