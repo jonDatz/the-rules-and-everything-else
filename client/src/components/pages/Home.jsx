@@ -76,7 +76,7 @@ class Home extends Component {
         <React.Fragment>
           <div className="sidenav-spacing">
               <Head />
-            <div class="row">
+            <div className="row">
               <Card spell={spell} classes={this.state.classes} school={this.state.school} />
               <Card articles={articles}/>
               {/* <SpellCard spell={spell} classes={this.state.classes} school={this.state.school} /> */}

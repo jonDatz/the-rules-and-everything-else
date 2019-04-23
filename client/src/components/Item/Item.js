@@ -3,7 +3,8 @@ import { Draggable } from 'react-beautiful-dnd'
 
 function Item(props) {
     let style = {
-        'width': '18rem'
+        'width': '18rem',
+        'height':'35mm'
     };
     return (
         <Draggable key={props.id} draggableId={props.id} index={props.index}>
@@ -16,7 +17,7 @@ function Item(props) {
                     </div>
                 ) : (
 
-                        <div className="card-panel teal cardCharSheet" ref={provided.innerRef} {...provided.draggableProps}  {...provided.dragHandleProps}>
+                        <div className="card-panel teal cardCharSheet" ref={provided.innerRef} {...provided.draggableProps}  {...provided.dragHandleProps} style={style}>
                             <span className="white-text">{props.content}</span>
                         </div>
                     ))
