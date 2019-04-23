@@ -3,15 +3,16 @@ import Card from '../Card/Card';
 // import SpellCard from '../Card/SpellCard';
 // import ArtCard from '../Card/ArtCard';
 import Head from '../Head/Head';
+import Profile from '../Profile/Profile';
 import { timingSafeEqual } from "crypto";
 
 class Home extends Component {
   state = {
     spell: {},
     isLoaded: false,
-    error: null
+    error: null,
+    profile: {}
   };
-
 
   componentDidMount() {
     console.log('hey I mounted');
@@ -61,6 +62,7 @@ class Home extends Component {
   render() {
 
     const { error, spell, articles } = this.state;
+    const {isAuthenticated} = this.props.auth;
 
     if (error) {
       return (
@@ -77,8 +79,10 @@ class Home extends Component {
           <div className="sidenav-spacing">
               <Head />
             <div className="row">
-              <Card spell={spell} classes={this.state.classes} school={this.state.school} />
-              <Card articles={articles}/>
+            {isAuthenticated() && (<Profile auth={this.props.auth} spell={spell} classes={this.state.classes} school={this.state.school} articles={articles} />)}
+              {!isAuthenticated() && (
+              <Card spell={spell} classes={this.state.classes} school={this.state.school} />)}
+              {!isAuthenticated() && (<Card articles={articles}/>)}             
               {/* <SpellCard spell={spell} classes={this.state.classes} school={this.state.school} /> */}
 
 
