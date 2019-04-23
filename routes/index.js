@@ -13,6 +13,14 @@ router.get('/articles', function (req, res) {
     });
 });
 
+router.post('/save', function (req, res) {
+  console.log(req.body);
+  console.log(req.body.articleId);
+  console.log(req.body.user);
+  res.json({sent: true});
+  // db.User.findOneAndUpdate({email: req.user}, {$push : {articles: {_id: req.id}}})
+})
+
 router.get('/api/scrape', function (req, res) {
 
   axios.get("http://dnd.wizards.com/articles").then(function (response) {
