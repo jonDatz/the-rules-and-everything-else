@@ -17,8 +17,9 @@ class Profile extends Component {
       return res.json();
     }).then(res => {
       console.log(res)
+      this.setState({savedArticles: res.articles})
     });
-  }
+  };
 
   componentWillMount() {
     this.setState({ profile: {} });
@@ -34,11 +35,12 @@ class Profile extends Component {
     };
   }
   render() {
-    const { profile } = this.state;
+    const { profile, savedArticles } = this.state;
+    console.log(savedArticles);
     return (
       <React.Fragment>
         <Card spell={this.props.spell} classes={this.props.classes} school={this.props.school} />
-        <Card save={this.props.save} articles={this.props.articles} profile={profile} />
+        <Card save={this.props.save} savedArticles={savedArticles} articles={this.props.articles} profile={profile} />
       </React.Fragment>
     );
   }

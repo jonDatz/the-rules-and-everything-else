@@ -2,6 +2,7 @@ import React from 'react';
 import { Tabs, Tab } from 'react-materialize';
 
 function Card(props) {
+    console.log(props);
     return (
         <React.Fragment>
             {
@@ -58,7 +59,7 @@ function Card(props) {
             {props.articles &&
                 (<div className="col s12 m7">
                     <div className="card blue-grey darken-1">
-                        {props.profile ? (
+                        {props.profile && props.savedArticles ? (
                             <React.Fragment>
                                 <div className="card-content blue-grey darken-1">
                                     <span className="card-title">D&D articles Via WotC</span>
@@ -94,40 +95,29 @@ function Card(props) {
                                     <Tab title='Saved' id='tabNav'>
                                         <div className='tabContent'>
                                             <div className="card-content grey lighten-4">
-                                                <div id="savedArticles">Saved Articles once I make that route</div>
+                                                <div id="savedArticles">
+                                                <table>
+                                                        <thead>
+                                                            <tr>
+                                                                <th>Headline</th>
+                                                                <th>Summary</th>
+                                                                <th>Save</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            {props.savedArticles.map((element, index) => (
+                                                                <tr key={index}>
+                                                                    <td><a href={element.link} target='_blank'>{element.headline}</a></td>
+                                                                    <td>{element.summary}</td>
+                                                                </tr>
+                                                            ))}
+                                                        </tbody>
+                                                    </table>
+                                                </div>
                                             </div>
                                         </div>
                                     </Tab>
                                 </Tabs>
-                                {/* <div class="card-tabs">
-                                    <ul class="tabs tabs-fixed-width">
-                                        <li class="tab"><a href="#recentArticles">Recent</a></li>
-                                        <li class="tab"><a class="active" href="#savedArticles">Saved</a></li>
-                                    </ul>
-                                </div>
-                                <div class="card-content grey lighten-4">
-                                    <div id="recentArticles">
-                                        <table>
-                                            <thead>
-                                                <tr>
-                                                    <th>Headline</th>
-                                                    <th>Summary</th>
-                                                    <th>Save</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                {props.articles.map((element, index) => (
-                                                    <tr key={index}>
-                                                        <td><a href={element.link} target='_blank'>{element.headline}</a></td>
-                                                        <td>{element.summary}</td>
-                                                        <td><button data-id={element._id}>Save</button></td>
-                                                    </tr>
-                                                ))}
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                    <div id="savedArticles">Saved Articles once I make that route</div>
-                                </div> */}
                             </React.Fragment>) : (
                                 <React.Fragment>
                                     <div className="card-content white-text">
