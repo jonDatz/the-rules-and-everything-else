@@ -57,27 +57,64 @@ function Card(props) {
             {props.articles &&
                 (<div className="col s12 m7">
                     <div className="card blue-grey darken-1">
-                        <div className="card-content white-text">
-                            <span className="card-title">Recent D&D articles</span>
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th>Headline</th>
-                                        <th>Summary</th>
-                                        <th>Save</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    {props.articles.map((element) => (
-                                    <tr>
-                                        <td><a href={element.link} target='_blank'>{element.headline}</a></td>
-                                        <td>{element.summary}</td>
-                                        <td><button>Save</button></td>
-                                    </tr>
-                                    ))}
-                                </tbody>
-                            </table>
-                        </div>
+                        {props.profile ? (
+                            <React.Fragment>
+                                <div className="card-content white-text">
+                                    <span className="card-title">D&D articles Via WotC</span>
+                                </div>
+                                <div class="card-tabs">
+                                    <ul class="tabs tabs-fixed-width">
+                                        <li class="tab"><a href="#recentArticles">Recent</a></li>
+                                        <li class="tab"><a class="active" href="#savedArticles">Saved</a></li>
+                                    </ul>
+                                </div>
+                                <div class="card-content grey lighten-4">
+                                    <div id="recentArticles">
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <th>Headline</th>
+                                                    <th>Summary</th>
+                                                    <th>Save</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                {props.articles.map((element) => (
+                                                    <tr>
+                                                        <td><a href={element.link} target='_blank'>{element.headline}</a></td>
+                                                        <td>{element.summary}</td>
+                                                        <td><button>Save</button></td>
+                                                    </tr>
+                                                ))}
+                                            </tbody>
+                                        </table></div>
+                                    <div id="savedArticles">Saved Articles once I make that route</div>
+                                </div>
+                            </React.Fragment>) : (
+                                <React.Fragment>
+                                    <div className="card-content white-text">
+                                        <span className="card-title">D&D articles Via WotC</span>
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <th>Headline</th>
+                                                    <th>Summary</th>
+                                                    <th>Save</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                {props.articles.map((element) => (
+                                                    <tr>
+                                                        <td><a href={element.link} target='_blank'>{element.headline}</a></td>
+                                                        <td>{element.summary}</td>
+                                                        <td><button>Save</button></td>
+                                                    </tr>
+                                                ))}
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </React.Fragment>
+                            )}
                     </div>
                 </div>
                 )

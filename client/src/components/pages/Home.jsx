@@ -41,7 +41,7 @@ class Home extends Component {
           error: error
         });
       });
-      
+
     fetch('/api/scrape')
       .then(res => {
         console.log(res);
@@ -62,7 +62,7 @@ class Home extends Component {
   render() {
 
     const { error, spell, articles } = this.state;
-    const {isAuthenticated} = this.props.auth;
+    const { isAuthenticated } = this.props.auth;
 
     if (error) {
       return (
@@ -77,12 +77,12 @@ class Home extends Component {
       return (
         <React.Fragment>
           <div className="sidenav-spacing">
-              <Head />
+            <Head />
             <div className="row">
-            {isAuthenticated() && (<Profile auth={this.props.auth} spell={spell} classes={this.state.classes} school={this.state.school} articles={articles} />)}
+              {isAuthenticated() && (<Profile auth={this.props.auth} spell={spell} classes={this.state.classes} school={this.state.school} articles={articles} />)}
               {!isAuthenticated() && (
-              <Card spell={spell} classes={this.state.classes} school={this.state.school} />)}
-              {!isAuthenticated() && (<Card articles={articles}/>)}             
+                <Card auth={this.props.auth} spell={spell} classes={this.state.classes} school={this.state.school} />)}
+              {!isAuthenticated() && (<Card articles={articles} auth={this.props.auth}/>)}
               {/* <SpellCard spell={spell} classes={this.state.classes} school={this.state.school} /> */}
 
 
