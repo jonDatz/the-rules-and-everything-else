@@ -1,0 +1,7 @@
+.parallax-container .parallax {
+    z-index: 10 !important;
+}
+
+.tabContent {
+    background-color: #e0e0e0;
+}
