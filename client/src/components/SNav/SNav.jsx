@@ -20,7 +20,7 @@ class SNav extends Component {
     return (
       <div id="snav">
         <SideNav
-          options={{ closeOnClick: true, draggable: true }}
+          options={{ closeOnClick: true, draggable: true}}
           className="sidenav sidenav-fixed"
         >
           <div className="title">

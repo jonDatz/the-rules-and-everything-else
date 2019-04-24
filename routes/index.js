@@ -6,12 +6,30 @@ const db = require("../models");
 
 // If no API routes are hit, send the React app
 
+router.post('/user', function (req, res) {
+  db.User.findOneAndUpdate({email: req.body.user}, {}, {upsert: true}).populate('articles')
+  .then(response => {
+    res.json(response)
+  });
+});
+
 router.get('/articles', function (req, res) {
-  db.Article.find()
+  db.Article.find({})
     .then(function (dbArticles) {
       res.json(dbArticles)
     });
 });
+
+router.post('/api/save', function (req, res) {
+  db.User.findOneAndUpdate({email: req.body.user}, {$addToSet: {articles: req.body.articleId}})
+  .then(userData => {
+    res.json(userData);
+  })
+  .catch(err => {
+    console.log(err);
+  })
+  
+})
 
 router.get('/api/scrape', function (req, res) {
 
@@ -32,7 +50,7 @@ router.get('/api/scrape', function (req, res) {
         })
         .catch(function (err) {
           // If an error occurred, log it
-          console.log(err);
+         
         });
     });
     res.send('Scraped Articles, Chief')
@@ -47,13 +65,12 @@ router.get('/api/random/spell', function (req, res) {
     method: 'GET',
     url: queryURL
   }).then(function (response) {
-    console.log(response.data);
     res.json(response.data);
   });
 });
 
-router.use(function (req, res) {
-  res.sendFile(path.join(__dirname, "../client/build/index.html"));
-});
+// router.use(function (req, res) {
+//   res.sendFile(path.join(__dirname, "../client/build/index.html"));
+// });
 
 module.exports = router;
