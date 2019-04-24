@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import Card from '../Card/Card';
-// import SpellCard from '../Card/SpellCard';
-// import ArtCard from '../Card/ArtCard';
+// import Card from '../Card/Card';
+import SpellCard from '../Card/SpellCard';
+import ArtCard from '../Card/ArtCard';
 import Head from '../Head/Head';
 import Profile from '../Profile/Profile';
 import { timingSafeEqual } from "crypto";
@@ -30,7 +30,8 @@ class Home extends Component {
     }).then(res => {
       return res.json();
     }).then(res => {
-      this.setState({savedArticles: res})
+      this.setState({savedArticles: res.articles});
+
     });
 
   };
@@ -102,8 +103,8 @@ class Home extends Component {
             <div className="row">
               {isAuthenticated() && (<Profile save={this.saveArticle} auth={this.props.auth} spell={spell} classes={this.state.classes} school={this.state.school} articles={articles} />)}
               {!isAuthenticated() && (
-                <Card auth={this.props.auth} spell={spell} classes={this.state.classes} school={this.state.school} />)}
-              {!isAuthenticated() && (<Card save={this.saveArticle} articles={articles} auth={this.props.auth} />)}
+                <SpellCard auth={this.props.auth} spell={spell} classes={this.state.classes} school={this.state.school} />)}
+              {!isAuthenticated() && (<ArtCard save={this.saveArticle} articles={articles} auth={this.props.auth} />)}
               {/* <SpellCard spell={spell} classes={this.state.classes} school={this.state.school} /> */}
 
 

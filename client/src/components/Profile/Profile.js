@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import Card from '../Card/Card';
+import ArtCard from '../Card/ArtCard';
+import SpellCard from '../Card/SpellCard';
 
 class Profile extends Component {
 
@@ -48,8 +49,8 @@ class Profile extends Component {
       console.log(savedArticles);
       return (
         <React.Fragment>
-          <Card spell={this.props.spell} classes={this.props.classes} school={this.props.school} />
-          <Card save={this.props.save} savedArticles={savedArticles} articles={this.props.articles} profile={profile} />
+          <SpellCard spell={this.props.spell} classes={this.props.classes} school={this.props.school} />
+          <ArtCard save={this.props.save} savedArticles={savedArticles} articles={this.props.articles} profile={profile} />
         </React.Fragment>
       )
     }
