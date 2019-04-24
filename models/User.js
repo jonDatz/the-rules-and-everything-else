@@ -10,11 +10,12 @@ var UserSchema = new Schema({
     },
     articles: [{
         type: Schema.Types.ObjectId,
-        ref: 'Article',
-        unique: true
+        ref: 'Article'
     }]
 });
 
 var User = mongoose.model("User", UserSchema);
+
+
 
 module.exports = User;

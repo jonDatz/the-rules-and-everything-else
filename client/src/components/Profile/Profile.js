@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Card from '../Card/Card';
 
 class Profile extends Component {
-  
+
   findOrCreateUser = (user) => {
     console.log('CreateUser Ran');
     fetch('/user', {
@@ -11,17 +11,19 @@ class Profile extends Component {
         'Accept': 'application/json, text/plain, */*',
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({user: user})
+      body: JSON.stringify({ user: user })
     }).then(res => {
       console.log(res);
       return res.json();
     }).then(res => {
       console.log(res)
-      this.setState({savedArticles: res.articles})
+      if (res.articles) {
+        this.setState({ savedArticles: res.articles })
+      };
     });
   };
 
-  componentWillMount() {
+  componentDidMount() {
     this.setState({ profile: {} });
     const { userProfile, getProfile } = this.props.auth;
     if (!userProfile) {
@@ -35,15 +37,23 @@ class Profile extends Component {
     };
   }
   render() {
-    const { profile, savedArticles } = this.state;
-    console.log(savedArticles);
-    return (
-      <React.Fragment>
-        <Card spell={this.props.spell} classes={this.props.classes} school={this.props.school} />
-        <Card save={this.props.save} savedArticles={savedArticles} articles={this.props.articles} profile={profile} />
-      </React.Fragment>
-    );
+    if (!this.state) {
+      return (
+        <React.Fragment>
+          <div>...loading</div>
+        </React.Fragment>
+      )
+    } else {
+      const { profile, savedArticles } = this.state;
+      console.log(savedArticles);
+      return (
+        <React.Fragment>
+          <Card spell={this.props.spell} classes={this.props.classes} school={this.props.school} />
+          <Card save={this.props.save} savedArticles={savedArticles} articles={this.props.articles} profile={profile} />
+        </React.Fragment>
+      )
+    }
   }
 }
 
-export default Profile;
+  export default Profile;

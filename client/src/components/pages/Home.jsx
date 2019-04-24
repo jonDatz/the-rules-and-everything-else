@@ -30,7 +30,7 @@ class Home extends Component {
     }).then(res => {
       return res.json();
     }).then(res => {
-      console.log(res)
+      this.setState({savedArticles: res})
     });
 
   };

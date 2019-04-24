@@ -2,7 +2,6 @@ import React from 'react';
 import { Tabs, Tab } from 'react-materialize';
 
 function Card(props) {
-    console.log(props);
     return (
         <React.Fragment>
             {
