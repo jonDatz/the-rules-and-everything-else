@@ -19,10 +19,7 @@ class SNav extends Component {
     const { isAuthenticated } = this.props.auth;
     return (
       <div id="snav">
-        <SideNav
-          options={{ closeOnClick: true, draggable: true}}
-          className="sidenav sidenav-fixed"
-        >
+        <SideNav options={{ closeOnClick: true, draggable: true}} className="sidenav sidenav-fixed">
           <div className="title">
             <h2 className="red-text text-accent-4 title-1">The Rules...</h2>
             <h4 className="title-2">
