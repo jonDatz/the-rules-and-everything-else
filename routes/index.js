@@ -50,7 +50,7 @@ router.get('/api/scrape', function (req, res) {
         })
         .catch(function (err) {
           // If an error occurred, log it
-         
+          console.log(err);
         });
     });
     res.send('Scraped Articles, Chief')
@@ -69,8 +69,8 @@ router.get('/api/random/spell', function (req, res) {
   });
 });
 
-// router.use(function (req, res) {
-//   res.sendFile(path.join(__dirname, "../client/build/index.html"));
-// });
+router.use(function (req, res) {
+  res.sendFile(path.join(__dirname, "../client/build/index.html"));
+});
 
 module.exports = router;
