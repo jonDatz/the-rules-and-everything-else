@@ -31,9 +31,7 @@ class Home extends Component {
       return res.json();
     }).then(res => {
       this.setState({savedArticles: res.articles});
-
     });
-
   };
 
   componentDidMount() {
@@ -85,6 +83,7 @@ class Home extends Component {
 
     const { error, spell, articles } = this.state;
     const { isAuthenticated } = this.props.auth;
+    console.log(isAuthenticated());
 
     if (error) {
       return (
@@ -105,9 +104,6 @@ class Home extends Component {
               {!isAuthenticated() && (
                 <SpellCard auth={this.props.auth} spell={spell} classes={this.state.classes} school={this.state.school} />)}
               {!isAuthenticated() && (<ArtCard save={this.saveArticle} articles={articles} auth={this.props.auth} />)}
-              {/* <SpellCard spell={spell} classes={this.state.classes} school={this.state.school} /> */}
-
-
             </div>
           </div>
         </React.Fragment>
