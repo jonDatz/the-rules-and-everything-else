@@ -18,39 +18,38 @@
         "id":1,
         "type": "constitution",
         "best4Class": ["All Classes"],
-        "description": "Constitution"
+        "description": "Your Constitution score represents your toughness and overall health. "
       },
       {
         "id":1,
         "type": "intelligence",
         "best4Class": ["Wizard"],
-        "description": ""
+        "description": "The Intelligence score represents your raw intellect, speed of thought, and knowledge of various subjects."
       },
       {
         "id":1,
         "type": "wisdom",
         "best4Class": ["Cleric", "Druid"],
-        "description": ""
+        "description": "Wisdom measures your ability to make good judgements, awareness, and decision making skills."
       },
       {
         "id":1,
         "type": "charisma",
         "best4Class": ["Bard", "Sorcerer", "Warlock"],
-        "description": ""
+        "description": "Your Charisma score measures your force of personality.  It can mean physical beauty or simply how easily you can influence others."
       }
 
     ]
   },
-  
-  
+
   {
     "characterSheet": [
         {
           "id": 1,
-          "image": "name-class-level.png",
+          "image": "character.png",
           "type": "basic-info",
           "tags": ["Name", "Race", "Level"],
-          "description": "This is where you store your characters basic info. You will fill this out initially"
+          "description": "This is where you store your character's basic info. You will fill this out initially when you are creating your character. \r\nWhen you are making your character first think about 'who' your character is and then find what race and class feels right for your character.  As you play your level will rise and you will gain new abilities."
 
         },
         {
@@ -58,39 +57,39 @@
           "image": "stats-modifiers.png",
           "type": "stats",
           "tags": ["Strength", "Dexterity", "Constitution", "Intelligence", "Wisdom", "Charisma"],
-          "description": "Your main stats that will govern & modify your rolls during any given moment"
+          "description": "Your main stats that will govern & modify your rolls during any given moment.  \r\nYou have an Ability Score (a number from 1-20) and from that ability score you calculate your Ability Modifier (Ranging from -5 to +5).  \r\nThe number you care most about is the Ability Modifier. You calculate the modifier by subtracting 10 from your score and dividing by 2 (round down)."
 
         },
         {
           "id": 3,
-          "image": "inspi-prof-saving-skills.png",
+          "image": "ability-checks.png",
           "type": "proficiencies",
           "tags": ["Inspirition", "Proficiency Bonus", "Saving Throws", "Skill Proficiencies"],
-          "description": ["Inspiration ","These skill proficiencies are a major part a player's toolset. You will often be asked by your DM to make Skill checks and, especially during battle, saving throws"]
+          "description": ["Inspiration is something that can be awarded to a player for doing something sufficiently cool or roleplaying very well.","Proficiencies are a vital part of your character.  They determine what things your character is more skilled at.  The way this works at the table is represented by the Proficiency Bonus, this number will increase as your level rises and you add it to a variety of rolls when you are proficienct in the action your are taking.","Skill proficiencies are a major part a player's toolset. You will often be asked by your DM to make Skill checks during play, usually after declaring you want to do something (climb a tree, seduce a barmaid, decipher an arcane symbol)."]
 
         },
         {
           "id": 4,
-          "image": "AC-Initiative-Speed-HP-THP.png",
+          "image": "hp.png",
           "type": "hp",
           "tags": ["Armor Class", "Initiative", "Speed", "Hit Points", "Temporary Hit Points", "Hit Dice", "Death Saves"],
-          "description": ["This section of the character sheet comes up often during combat.", "Armor class is the deciding factor when you are being attacked.",  "Inititiative bonus is what you add to your roll when rolling for initiative.", "Speed refers to your standard movement speed.", "Current Hit Points are where you take note of any damage you take.", "Temporary Hit Points come"]
+          "description": ["This section of the character sheet comes up often during combat.", "Your Armor Class determines how well armored or how difficult to hit your character is.",  "When combat begins you roll Inititiative.  This is where you record the bonus you add to your roll.", "Speed refers to your standard movement speed.  You might gain other speeds than simply running speed over the course of the game.", "The Current Hit Point box is where you record your maximum hit points as well as your current hit points if you've taken any damage.", "Some effects in the game will give your character Temporary Hitpoints.  These Hitpoints function like a extra pool of Health on top of your current Hitpoints.  When you take damage your Temporary Hitpoints are reduced prior to your current Hitpoints."]
 
         },
         {
           "id": 5,
-          "image": "attacks-spellcasting.png",
+          "image": "combat.png",
           "type": "combat",
-          "tags": ["Name", "Race", "Level"],
-          "description": "This is "
+          "tags": ["Attack", "Attack Bonus", "Cantrip"],
+          "description": ["This section of your character sheet is where you can record your most frequently used weapons and cantrips.  The three spaces here are meant for the name of the weapon/cantrip, your Attack Bonus, and the Damage dealt.", "The second space is where you record your attack bonus.  This is calculated by adding the relevant stat modifier (Strength for melee weapons, Dexterity for ranged weapons, and either for weapons with the finesse property) as well as your proficiency bonus if you are proficient with that weapon.", "Damage is calculated by rolling dice according to the weapon or spell you used, finally for weapon attacks you add your ability modifier to your roll, just like the attack bonus, but you do not add your proficiency bonus."]
 
         },
         {
           "id": 6,
-          "image": "name-class-level.png",
-          "type": "Basic Info",
-          "tags": ["Name", "Race", "Level"],
-          "description": "This is "
+          "image": "other-lang.png",
+          "type": "other proficiencies",
+          "tags": ["Other Proficiencies"],
+          "description": "This is a suprisingly important portion of your character sheet.  Here is where you will record the various proficiencies your character has other than skills.  These can range from languages to "
 
         },
         {
