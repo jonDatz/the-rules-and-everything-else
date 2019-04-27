@@ -34,25 +34,24 @@ class Home extends Component {
     });
   };
 
+  
+
   componentDidMount() {
+    let newState = {};
     console.log('hey I mounted');
     fetch('/api/random/spell')
       .then(res => {
-        console.log(res);
+        // console.log(res);
         return res.json();
       })
       .then((data) => {
-        console.log(data);
-        console.log(data.school.name);
-        this.setState({
-          isLoaded: true,
-          spell: data,
-          school: data.school.name,
-          classes: data.classes.map(item => {
+        newState.isLoaded = true;
+        newState.spell = data;
+        newState.school = data.school.name;
+        newState.classes = data.classes.map(item => {
             return item.name
-          })
-        });
-        console.log(this.state)
+          });
+        console.log(newState)
 
       }, (error) => {
         console.error(error)
@@ -64,16 +63,18 @@ class Home extends Component {
 
     fetch('/api/scrape')
       .then(res => {
-        console.log(res);
+        // console.log(res);
         fetch('/articles')
           .then(res => {
             return res.json()
           })
           .then(res => {
-            console.log(res);
-            this.setState({
-              articles: res
-            });
+            console.log('We ran through the article fetch');
+            // console.log(res);
+            newState.articles = res;
+            // console.log(this.state);
+            console.log(newState);
+            this.setState(newState)
             console.log(this.state);
           })
       });
