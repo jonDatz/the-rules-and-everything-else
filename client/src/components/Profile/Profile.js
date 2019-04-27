@@ -35,6 +35,7 @@ class Profile extends Component {
       });
     } else {
       this.setState({ profile: userProfile });
+      this.findOrCreateUser(userProfile.name);
     };
   }
   render() {
@@ -46,11 +47,11 @@ class Profile extends Component {
       )
     } else {
       const { profile, savedArticles } = this.state;
-      console.log(savedArticles);
+      console.log(this.state);
       return (
         <React.Fragment>
           <SpellCard spell={this.props.spell} classes={this.props.classes} school={this.props.school} />
-          <ArtCard save={this.props.save} savedArticles={savedArticles} articles={this.props.articles} profile={profile} />
+          <ArtCard auth={this.props.auth} save={this.props.save} savedArticles={savedArticles} articles={this.props.articles} profile={profile} />
         </React.Fragment>
       )
     }

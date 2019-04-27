@@ -1,5 +1,6 @@
 import React from "react";
 import { Tabs, Tab, Row, Col, Card, CardTitle } from "react-materialize";
+import image from '../../images/castle.jpg';
 import "./style.css";
 
 const TabNav = props => {
@@ -11,7 +12,7 @@ const TabNav = props => {
             <div className="tabContent">
               <Row>
                 <Col m={6} s={12}>
-                  <Card horizontal header={<CardTitle />} actions={[<a />]}>
+                  <Card horizontal header={<CardTitle image={image} />} actions={[<a />]}>
                     {props.content1}
                   </Card>
                 </Col>

@@ -76,7 +76,7 @@ class App extends Component {
 
     const finish = this.state.lists[destination.droppableId]
 
-    if (finish.items.length >= 8) {
+    if (finish.items.length >= 4) {
       return;
     };
 
@@ -178,6 +178,8 @@ class App extends Component {
               </Bank>
             </div>
             <br />
+            <button onClick={this.print.bind(this)}>Create PDF from List</button>
+            <br />
             <div className='row printTarget'>
               <div className='col s4'>
                 <List id='list_1'>
@@ -201,7 +203,6 @@ class App extends Component {
                 </List>
               </div>
             </div>
-            <button onClick={this.print.bind(this)}>Create PDF from List</button>
           </div>
         </DragDropContext>
       </div>
