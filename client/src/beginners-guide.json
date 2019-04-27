@@ -116,7 +116,7 @@
         ],
         "description": [
           "This section of the character sheet comes up often during combat.",
-          "Your Armor Class determines how well armored or how difficult to hit your character is.",
+          "Your Armor Class determines how well armored or how difficult to hit your character is.  Without armor you calculate your AC by adding your Dexterity Modifier to 10.  Some Class Features and Armors will have their own ways of calculating Armor Class",
           "When combat begins you roll Inititiative.  This is where you record the bonus you add to your roll.",
           "Speed refers to your standard movement speed.  You might gain other speeds than simply running speed over the course of the game.",
           "The Current Hit Point box is where you record your maximum hit points as well as your current hit points if you've taken any damage.",
@@ -188,17 +188,52 @@
           "Flaws"
         ],
         "description": "When you pick a background from the Player's Handbook that background will have a set of tables that you can roll on (or just pick ones you like) to determine various facets of your character.  These tables are not required and you can discuss with your DM to create your own answers for these questions.  This section of the character sheet is here to serve as a reminder or how you want your character to behave.  Sometimes DMs might award Inspiration to players who are acting in accordance with your various traits."
+      }
+    ]
+  },
+  {
+    "characterBuilding" : [
+      {
+        "id": 1,
+        "step": "Who do I want to play?",
+        "tags": ["Character Concept"],
+        "description": "Before you start making your character (picking out your race and class) you should start thinking about what kind of character you want to play.  Are they going to be a hero - saving folks and stopping villains - or are they out for their own good - chasing money and leaving when the going gets tough.  Why is your character adventuring?  Are they chasing their rival?  Searching for a lost treasure?  Trying to found a kingdom? \r\nWe'll create a character along with you, just to serve as an example.  \r\nI like the idea of a foolish character, and I just watched the Jackie Chan film Drunken Master recently, so I want to make a master fighter that's also a drunkard."
       },
       {
-        "id": 11,
-        "image": "name-class-level.png",
-        "type": "Basic Info",
-        "tags": [
-          "Name",
-          "Race",
-          "Level"
-        ],
-        "description": "This is "
+        "id": 2,
+        "step": "What Class should I be?",
+        "tags": ["Class"],
+        "description": "The Basic Rules and the Player's Handbook normally suggests you choose your race before you class, but often people will do the opposite.  The Class you choose is a broad description of your character's talents and abilities.  In the book there is plenty of flavor provided for each class but don't feel limited by that flavor, talk with your DM and think on your own to create your own flavor for a class if one doesn't feel right. \r\n Once you know what class you would like to be it will grant you several class Features and Proficiencies.  Mark down these features and Proficiencies on yoru character sheet and you can move on to the next step.\r\nFor our example character I know that the idea of a drunken master is a class option for the monk, but I dont't want to use that one.  I like the barbarian class.  I like the idea of gettign a burst of strength for our character, as well as the reckless behavior a barbarian demonstrates.  So our character will be a barbarian, but instead of getting power from rage our character will get drink and get his strength from some special alcohol he carries with him."
+      },
+      {
+        "id": 3,
+        "step": "What Race should I be?",
+        "tags": ["Race"],
+        "description": "The Player's Handbook says to choose your character's race before your class, and you may if you wish.  Sometimes know what race your character will be can help solidify the idea for what your character will be.  Some Races also have Supraces, which offer different racial traits that you add onto the base Race for your character.  Your Race will offer lots of information about your character, giving them a culture and general physical attributes that help to describe your character.  Your Race will also come along with a bonus to at least one of your Ability Scores, which we will determine in the next step. \r\n Dwarves are notorious drinkers, and I don't think we need to think too much more than that to choose the Race for our example character.  Now Dwarves have two different subraces to choose from, so we need to choose Hill Dwarf (Clever and resilient) or Mountain Dwarf (Strong and tall, for a dwarf).  I think being strong makes more sense for our character, so lets go with the Mountain dwarf."
+      },
+      {
+        "id": 4,
+        "step": "What are my Ability Scores?",
+        "tags": ["Ability Scores", "Strength", "Dexterity", "Constitution","Wisdom","Intelligence","Charisma"],
+        "description": "There are a few different ways to determine your character's Ability Scores: rolling, point buy, and the standard array.  After your use one of these methods to determine your Ability scores remember to add the increases to your scores your character got from your Race.  \r\nThe most common method is the rolling method.  You take 4 six sided dice (called d6s) and roll them, then you add together the three highest numbers you rolled and record that sum.  You do this a total of 6 times and then you assign each number to an Ability. \r\nThe next method is the standard array.  This method is the simplest because it is just a set of numbers that you use [15, 14, 13, 12, 10, 8].  Now just like with rolling you assign those numbers to your Abilities as you like.  \r\nThe last way described in the books is the Point Buy Method.  With point buy the DM will give you a number of points you can spend on your Ability Scores.  The highest number you can buy is 15 and the lowest is 8.  \r\n8 costs 0 points, 9 costs 1, 10 costs 2, 11 costs 3, 12 costs 4, 13 costs 5, 14 costs 7, and 15 costs 9\r\nLet's use the standard array for our Drunken Barbarian.  A Barbarian cares about Strength, Constitution, and Dexterity the most, so we want our highest scores in those spots.  We get an additional +2 to our Strength and Constitution thanks to our Race and Subrace.  Our Ability Scores end up looking like: [Strength = 15, Dexterity = 14, Constitution = 17, Wisdom = 8, Intelligence = 10, Charisma = 12]" 
+      },
+      {
+        "id": 5,
+        "step": "What is my Character like?",
+        "tags": ["Alignment","Appearance","Background"],
+        "description": "Now we know most of the mechanical basis of our character and we have an idea of how our character should act.  Here we flesh out our character's physical appearance and thier personality.  \r\nFirst we choose one of the most useless parts of our character: alignment.  Your character's alignment is a combination of their morality and ethics.  Alignment is on a three by three grid, a combination of Good/Neutral/Evil and Chaotic/Neutral/Lawful.  Your alignment won't affect much in play, but it will help you to think about how your character should react and behave as you roleplay more and more.  \r\nMore importantly you will choose a background at this point.  Your background will give you some basic equipment, some proficiencies, and a background feature.  Once you've decided on your background for each background there will be a selection of tables that offer ideas for your character's personality traits, ideals, bonds, and flaws.  After you have all the information record those things on your character sheet.  \r\nFinally it is time to describe how your character looks, think about their Ability Scores and your character concept when you describe them.  You might have a page with sections to fill in this data, or you could just record it on a word doc or journal"
+      },
+      {
+        "id": 6,
+        "step": "What equipment do I have?",
+        "tags": ["Equipment"],
+        "description": "Your class and background will determine your character's staring equipment.  Make sure to record the equipment listed there on your character sheet.  \r\nAnother option is to purchase your own starting equipment.  When you choose this option you gain a number of Gold Pieces based upon your class.  The amount of gold you gain and the prices for equipment is listed in Chapter 5 of the Player's Handbook or the Basic rules. \r\nIn order to properly wield weapons or armor you need to be proficient with them.  After you find your armor calculate your AC and mark it down on the sheet.  Similarly after you find what weapons you start with calculate your bonus to attack for them and mark that down on your sheet as well."
+      },
+      {
+        "id": 7,
+        "step": "Getting the Party together",
+        "tags": ["Beginning the Game"],
+        "description": "Now that you've made your own character it's time to meet with the rest of your party.  If you can this is a great time to meet with your DM and the other players and you can all share your characters and figure out what sorts of adventures you want to go on together."
       }
     ]
   }
