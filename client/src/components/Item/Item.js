@@ -15,14 +15,18 @@ function Item(props) {
             {(provided, snapshot) => (
                 props.location === 'bank' ? (
                     <div className="col s3 m2">
-                        <div className="card-panel teal cardCharSheet" ref={provided.innerRef} {...provided.draggableProps}  {...provided.dragHandleProps} style={bankStyle}>
-                            <span className="white-text">{props.content}</span>
+                        <div className="card cardCharSheet" ref={provided.innerRef} {...provided.draggableProps}  {...provided.dragHandleProps} style={bankStyle}>
+                            <div className="card-image">
+                                <img src={require(`../../images/${props.image}`)} />
+                            </div>
                         </div>
                     </div>
                 ) : (
 
-                        <div className="card-panel teal cardCharSheet" ref={provided.innerRef} {...provided.draggableProps}  {...provided.dragHandleProps} style={itemStyle}>
-                            <span className="white-text">{props.content}</span>
+                        <div className="card cardCharSheet" ref={provided.innerRef} {...provided.draggableProps}  {...provided.dragHandleProps} style={itemStyle}>
+                            <div className="card-image">
+                                <img src={require(`../../images/${props.image}`)} />
+                            </div>
                         </div>
                     ))
             }

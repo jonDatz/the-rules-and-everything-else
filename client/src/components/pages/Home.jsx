@@ -42,7 +42,9 @@ class Home extends Component {
     fetch('/api/random/spell')
       .then(res => {
         // console.log(res);
+        if (res) {
         return res.json();
+        }
       })
       .then((data) => {
         newState.isLoaded = true;

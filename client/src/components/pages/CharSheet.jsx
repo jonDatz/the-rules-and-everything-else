@@ -5,12 +5,14 @@ import List from '../List/List';
 import Bank from '../Bank/Bank';
 import Html2Canvas from 'html2canvas';
 import jsPDF from 'jspdf';
+import ImagesList from '../../items.json';
 
-let list1Array = [{ id: 'listItem-1', content: 'first item 1' }];
+let list1Array = [ImagesList[0]];
 
-let list2Array = [{ id: 'listItem-2', content: 'second item 1' }];
+let list2Array = [ImagesList[1]];
 
-let list3Array = [{ id: 'listItem-3', content: 'second item 1' }, { id: 'listItem-4', content: 'second item 2' }, { id: 'listItem-5', content: 'second item 3' }, { id: 'listItem-6', content: 'second item 4' }, { id: 'listItem-7', content: 'second item 5' }, { id: 'listItem-8', content: 'second item 6' }, { id: 'listItem-9', content: 'first item 2' }, { id: 'listItem-10', content: 'first item 3' }, { id: 'listItem-11', content: 'first item 4' }, { id: 'listItem-12', content: 'first item 5' }, { id: 'listItem-13', content: 'first item 6' }, { id: 'listItem-14', content: 'second item 2' }, { id: 'listItem-15', content: 'second item 3' }, { id: 'listItem-16', content: 'second item 4' }, { id: 'listItem-17', content: 'second item 5' }, { id: 'listItem-18', content: 'second item 6' }];
+let bankArray = ImagesList.map(item => item);
+let list3Array = [ImagesList[2]];
 
 const getItems = (count, offset = 0) =>
   Array.from({ length: count }, (v, k) => k).map(k => ({
@@ -32,7 +34,7 @@ class App extends Component {
     lists: {
       'bank': {
         id: 'bank',
-        items: list3Array
+        items: bankArray
       },
       'list_1': {
         id: 'list_1',
@@ -44,7 +46,7 @@ class App extends Component {
       },
       'list_3': {
         id: 'list_3',
-        items: getItems(1)
+        items: list3Array
       }
     },
     idCounter: 18,
@@ -53,7 +55,7 @@ class App extends Component {
 
   print = () => {
     const filename = 'customSheet.pdf';
-  
+
     Html2Canvas(document.querySelector('.printTarget')).then(canvas => {
       let pdf = new jsPDF('p', 'mm', 'a4');
       pdf.addImage(canvas.toDataURL('image/png'), 'PNG', 0, 0, 211, 298);
@@ -109,7 +111,7 @@ class App extends Component {
       console.log('bank');
       const bankItems = Array.from(start.items);
       const [removed] = bankItems.splice(source.index, 1);
-      const newItem = { id: this.state.idCounter + 1, content: removed.content }
+      const newItem = { id: this.state.idCounter + 1, image: removed.image }
       bankItems.splice(source.index, 0, newItem);
       const newBank = {
         ...start,
@@ -165,47 +167,48 @@ class App extends Component {
   };
 
   render() {
+    console.log(ImagesList);
     return (
       <React.Fragment>
-      <div className="sidenav-spacing">
-        <DragDropContext onDragEnd={this.onDragEnd}>
-          <div className='container'>
-            <div className='row'>
-              <Bank id='bank'>
-                {this.state.lists.bank.items.map((item, index) => (
-                  <Item key={index} id={item.id} index={index} content={item.content} location='bank' />
-                ))}
-              </Bank>
+        <div className="sidenav-spacing">
+          <br />
+          <button onClick={this.print.bind(this)}>Create PDF from List</button>
+          <br />
+          <DragDropContext onDragEnd={this.onDragEnd}>
+            <div className='container'>
+              <div className='row'>
+                <Bank id='bank'>
+                  {this.state.lists.bank.items.map((item, index) => (
+                    <Item key={index} id={item.id} index={index} image={item.image} location='bank' />
+                  ))}
+                </Bank>
+              </div>
+              <div className='row printTarget'>
+                <div className='col s4'>
+                  <List id='list_1'>
+                    {this.state.lists.list_1.items.map((item, index) => (
+                      <Item key={index} id={item.id} index={index} image={item.image} />
+                    ))}
+                  </List>
+                </div>
+                <div className='col s4'>
+                  <List id='list_2'>
+                    {this.state.lists.list_2.items.map((item, index) => (
+                      <Item key={index} id={item.id} index={index} image={item.image} />
+                    ))}
+                  </List>
+                </div>
+                <div className='col s4'>
+                  <List id='list_3'>
+                    {this.state.lists.list_3.items.map((item, index) => (
+                      <Item key={index} id={item.id} index={index} image={item.image} />
+                    ))}
+                  </List>
+                </div>
+              </div>
             </div>
-            <br />
-            <button onClick={this.print.bind(this)}>Create PDF from List</button>
-            <br />
-            <div className='row printTarget'>
-              <div className='col s4'>
-                <List id='list_1'>
-                  {this.state.lists.list_1.items.map((item, index) => (
-                    <Item key={index} id={item.id} index={index} content={item.content} />
-                  ))}
-                </List>
-              </div>
-              <div className='col s4'>
-                <List id='list_2'>
-                  {this.state.lists.list_2.items.map((item, index) => (
-                    <Item key={index} id={item.id} index={index} content={item.content} />
-                  ))}
-                </List>
-              </div>
-              <div className='col s4'>
-                <List id='list_3'>
-                  {this.state.lists.list_3.items.map((item, index) => (
-                    <Item key={index} id={item.id} index={index} content={item.content} />
-                  ))}
-                </List>
-              </div>
-            </div>
-          </div>
-        </DragDropContext>
-      </div>
+          </DragDropContext>
+        </div>
       </React.Fragment>
     );
   }
