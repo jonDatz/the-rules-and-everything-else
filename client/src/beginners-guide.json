@@ -192,48 +192,230 @@
     ]
   },
   {
-    "characterBuilding" : [
+    "characterBuilding": [
       {
         "id": 1,
         "step": "Who do I want to play?",
-        "tags": ["Character Concept"],
+        "tags": [
+          "Character Concept"
+        ],
         "description": "Before you start making your character (picking out your race and class) you should start thinking about what kind of character you want to play.  Are they going to be a hero - saving folks and stopping villains - or are they out for their own good - chasing money and leaving when the going gets tough.  Why is your character adventuring?  Are they chasing their rival?  Searching for a lost treasure?  Trying to found a kingdom? \r\nWe'll create a character along with you, just to serve as an example.  \r\nI like the idea of a foolish character, and I just watched the Jackie Chan film Drunken Master recently, so I want to make a master fighter that's also a drunkard."
       },
       {
         "id": 2,
         "step": "What Class should I be?",
-        "tags": ["Class"],
+        "tags": [
+          "Class"
+        ],
         "description": "The Basic Rules and the Player's Handbook normally suggests you choose your race before you class, but often people will do the opposite.  The Class you choose is a broad description of your character's talents and abilities.  In the book there is plenty of flavor provided for each class but don't feel limited by that flavor, talk with your DM and think on your own to create your own flavor for a class if one doesn't feel right. \r\n Once you know what class you would like to be it will grant you several class Features and Proficiencies.  Mark down these features and Proficiencies on yoru character sheet and you can move on to the next step.\r\nFor our example character I know that the idea of a drunken master is a class option for the monk, but I dont't want to use that one.  I like the barbarian class.  I like the idea of gettign a burst of strength for our character, as well as the reckless behavior a barbarian demonstrates.  So our character will be a barbarian, but instead of getting power from rage our character will get drink and get his strength from some special alcohol he carries with him."
       },
       {
         "id": 3,
         "step": "What Race should I be?",
-        "tags": ["Race"],
+        "tags": [
+          "Race"
+        ],
         "description": "The Player's Handbook says to choose your character's race before your class, and you may if you wish.  Sometimes know what race your character will be can help solidify the idea for what your character will be.  Some Races also have Supraces, which offer different racial traits that you add onto the base Race for your character.  Your Race will offer lots of information about your character, giving them a culture and general physical attributes that help to describe your character.  Your Race will also come along with a bonus to at least one of your Ability Scores, which we will determine in the next step. \r\n Dwarves are notorious drinkers, and I don't think we need to think too much more than that to choose the Race for our example character.  Now Dwarves have two different subraces to choose from, so we need to choose Hill Dwarf (Clever and resilient) or Mountain Dwarf (Strong and tall, for a dwarf).  I think being strong makes more sense for our character, so lets go with the Mountain dwarf."
       },
       {
         "id": 4,
         "step": "What are my Ability Scores?",
-        "tags": ["Ability Scores", "Strength", "Dexterity", "Constitution","Wisdom","Intelligence","Charisma"],
-        "description": "There are a few different ways to determine your character's Ability Scores: rolling, point buy, and the standard array.  After your use one of these methods to determine your Ability scores remember to add the increases to your scores your character got from your Race.  \r\nThe most common method is the rolling method.  You take 4 six sided dice (called d6s) and roll them, then you add together the three highest numbers you rolled and record that sum.  You do this a total of 6 times and then you assign each number to an Ability. \r\nThe next method is the standard array.  This method is the simplest because it is just a set of numbers that you use [15, 14, 13, 12, 10, 8].  Now just like with rolling you assign those numbers to your Abilities as you like.  \r\nThe last way described in the books is the Point Buy Method.  With point buy the DM will give you a number of points you can spend on your Ability Scores.  The highest number you can buy is 15 and the lowest is 8.  \r\n8 costs 0 points, 9 costs 1, 10 costs 2, 11 costs 3, 12 costs 4, 13 costs 5, 14 costs 7, and 15 costs 9\r\nLet's use the standard array for our Drunken Barbarian.  A Barbarian cares about Strength, Constitution, and Dexterity the most, so we want our highest scores in those spots.  We get an additional +2 to our Strength and Constitution thanks to our Race and Subrace.  Our Ability Scores end up looking like: [Strength = 15, Dexterity = 14, Constitution = 17, Wisdom = 8, Intelligence = 10, Charisma = 12]" 
+        "tags": [
+          "Ability Scores",
+          "Strength",
+          "Dexterity",
+          "Constitution",
+          "Wisdom",
+          "Intelligence",
+          "Charisma"
+        ],
+        "description": "There are a few different ways to determine your character's Ability Scores: rolling, point buy, and the standard array.  After your use one of these methods to determine your Ability scores remember to add the increases to your scores your character got from your Race.  \r\nThe most common method is the rolling method.  You take 4 six sided dice (called d6s) and roll them, then you add together the three highest numbers you rolled and record that sum.  You do this a total of 6 times and then you assign each number to an Ability. \r\nThe next method is the standard array.  This method is the simplest because it is just a set of numbers that you use [15, 14, 13, 12, 10, 8].  Now just like with rolling you assign those numbers to your Abilities as you like.  \r\nThe last way described in the books is the Point Buy Method.  With point buy the DM will give you a number of points you can spend on your Ability Scores.  The highest number you can buy is 15 and the lowest is 8.  \r\n8 costs 0 points, 9 costs 1, 10 costs 2, 11 costs 3, 12 costs 4, 13 costs 5, 14 costs 7, and 15 costs 9\r\nLet's use the standard array for our Drunken Barbarian.  A Barbarian cares about Strength, Constitution, and Dexterity the most, so we want our highest scores in those spots.  We get an additional +2 to our Strength and Constitution thanks to our Race and Subrace.  Our Ability Scores end up looking like: [Strength = 15, Dexterity = 14, Constitution = 17, Wisdom = 8, Intelligence = 10, Charisma = 12]"
       },
       {
         "id": 5,
         "step": "What is my Character like?",
-        "tags": ["Alignment","Appearance","Background"],
+        "tags": [
+          "Alignment",
+          "Appearance",
+          "Background"
+        ],
         "description": "Now we know most of the mechanical basis of our character and we have an idea of how our character should act.  Here we flesh out our character's physical appearance and thier personality.  \r\nFirst we choose one of the most useless parts of our character: alignment.  Your character's alignment is a combination of their morality and ethics.  Alignment is on a three by three grid, a combination of Good/Neutral/Evil and Chaotic/Neutral/Lawful.  Your alignment won't affect much in play, but it will help you to think about how your character should react and behave as you roleplay more and more.  \r\nMore importantly you will choose a background at this point.  Your background will give you some basic equipment, some proficiencies, and a background feature.  Once you've decided on your background for each background there will be a selection of tables that offer ideas for your character's personality traits, ideals, bonds, and flaws.  After you have all the information record those things on your character sheet.  \r\nFinally it is time to describe how your character looks, think about their Ability Scores and your character concept when you describe them.  You might have a page with sections to fill in this data, or you could just record it on a word doc or journal"
       },
       {
         "id": 6,
         "step": "What equipment do I have?",
-        "tags": ["Equipment"],
+        "tags": [
+          "Equipment"
+        ],
         "description": "Your class and background will determine your character's staring equipment.  Make sure to record the equipment listed there on your character sheet.  \r\nAnother option is to purchase your own starting equipment.  When you choose this option you gain a number of Gold Pieces based upon your class.  The amount of gold you gain and the prices for equipment is listed in Chapter 5 of the Player's Handbook or the Basic rules. \r\nIn order to properly wield weapons or armor you need to be proficient with them.  After you find your armor calculate your AC and mark it down on the sheet.  Similarly after you find what weapons you start with calculate your bonus to attack for them and mark that down on your sheet as well."
       },
       {
         "id": 7,
         "step": "Getting the Party together",
-        "tags": ["Beginning the Game"],
+        "tags": [
+          "Beginning the Game"
+        ],
         "description": "Now that you've made your own character it's time to meet with the rest of your party.  If you can this is a great time to meet with your DM and the other players and you can all share your characters and figure out what sorts of adventures you want to go on together."
+      }
+    ]
+  },
+  {
+    "combat": [
+      {
+        "id": 1,
+        "section": "The Combat Round",
+        "tags": "Action, Bonus Action, Turn, Round, Reaction, Item Interaction, Move",
+        "description": "Combat begins with everyone rolling intiative, and that determines the turn order.  Combat proceeds turn by turn from the highest intiative to the lowest intiative.  Once everyone has taken their turn that is the end of that round of combat.  A round of combat might matter if you have cast a spell or effect that has a duration, and a round of combat lasts 6 seconds in game for the sake of duration of effects. \r\nDuring your turn you have a variety of things you can do, but those things are limited by the number of actions and bonus actions you may take during your turn.  Every character may take one Action, one Bonus Action, mvoe up to their move speed, and they may interact with one Item each turn.  In addition to those, each chracter has a single Reaction they may use each round of combat which they regain at the start of their turn.  \r\nSome classes will give you features that allow you to do soemthing that is normally an action as a bonus action or allow you to take more than one action in a turn.  Finally feel free to add flavor to how your character moves or does their actions; have fun with it!"
+      },
+      {
+        "id": 2,
+        "section": "Actions and More",
+        "tags": [
+          "Dodge",
+          "Attack",
+          "Cast a Spell",
+          "Disengage",
+          "Dash",
+          "Use an Item",
+          "Ready an Action",
+          "Hide",
+          "Grapple",
+          "Help",
+          "Search"
+        ],
+        "description": [
+          "The Dodge action gives any attack against you disadvantage as logn as you can see your attacker.  You also gain advantage on Dexterity Saving Throws",
+          "When you decide to make an attack you take the Attack Action.  Some classes have features that allow you to make more than one attack at once.  When you make an attack you choose your target, the DM determines any extra modifiers to your attack or the target's defense, and you make your attack roll.  If you hit you roll for the damage you deal as well as any additional effects that might occur.",
+          "When you Cast a Spell you check the 'casting time' in the spell description and that tells you whether a spell takes an action, bonus action, or something else.  Just like with making an attack you must make sure you are in range and can see your target to cast a spell.  Spells have several other elements as well that are covered in the Magic section of this guide.",
+          "Disengage causes your movement not to trigger an attack of oportunity for the rest of the turn.",
+          "Dash increases your move speed by your current move speed for the rest of the turn.",
+          "During your turn you can Use an Item/Object once for free (such as opening a door during a movement or drawing your sword as part of an attack), but if you wish to do more than one interaction or interact with more than one object you need to use your action to do so.",
+          "If you wish to wait before you spring your action you may Ready an Action.  When you do so you decide what you will do as well as the trigger for you acting (something like 'If an enemy moves within my range I will attack them').  When the trigger you declared occurs you may take your reaction to carry out the action you declared or ignore that trigger.",
+          "When you take the Hide action you make a Dexterity (stealth) ability check to attempt to hide.  If you succeed to you gain some benefits.  Attacks against an unseen enemy have disadvantage, and when the attacker is unseen they gain advantage on their attack.  When you make an attack you give away your location after being hidden.",
+          "Grappling is essentially wrestling with the enemy and inconviencing them.  To grapple a target you make a Strength (athletics) check and they make a Strength (Atlthetics) or Dexterity (Acrobatics) to try and escape your grasp.  If you succeed their move speed becomes 0 and they must use an action to attempt to escape, which prompts the same contest as before between your rolls.  When you move after grappling a creature your speed is halved but the creature moves with you.",
+          "You are able to give some help to another creature with the Help action.  This can give them advantage on the next ability check they make to perform the task you are helping with.  You can also help attack a creature that is within 5 feet of you, distracting it so that your ally can more easily hit it, giving them advantage on the first attack roll against that creature before your next turn.",
+          "If you think something is amiss you can take the Search action to try and find something.  The DM will request either a Wisdom (perception) check or an Intelligence (investigation) check and then inform you of your results."
+        ]
+      },
+      {
+        "id": 3,
+        "section": "Dying, Health, and Saving Throws",
+        "tags": ["Death", "Hit Points", "Saving Throws"],
+        "description": ""
+      },
+      {
+        "id": 4,
+        "section": "Your Class",
+        "tags": "Class",
+        "description": "WIP \r\nHere will stand details about each class in combat specifically."
+      },
+      {
+        "id": 5,
+        "section": "Advantage and Disadvantage",
+        "tags": ["Advantage","Disadvantage"],
+        "description": "Many effects throughout the game will give you or others Advantage or Disadvantage.  Worry not!  These two things are quite simple.  When you are rolling a d20 (whether for an attack, a save, or anything else) and you have advantage, you simply roll your die twice and use the higher roll.  For disadvantage you roll twice but must use the lower number.  Some situations may result in your having both Advantage and Disadvantage at once, in that case you only roll once.  Finally, no matter how many times you have advantage or disadvantage you only roll twice, and regardless of if you have advantage six times and disadvantage once it still means you only roll once."
+      }
+    ]
+  },
+  {
+    "roleplaying": [
+      {
+        "id": 1,
+        "section": "Ability Checks and Skill Checks",
+        "tags": ["Ability Checks","Skill Checks"],
+        "description": ""
+      },
+      {
+        "id": 2,
+        "section": "What is Roleplaying?",
+        "tags": "Roleplaying",
+        "description": ""
+      },
+      {
+        "id": 3,
+        "section": "Your Background",
+        "tags": "Background",
+        "description": ""
+      },
+      {
+        "id": 4,
+        "section": "Inspiration",
+        "tags": "Inspiration",
+        "description": ""
+      }
+    ]
+  },
+  {
+    "exploring": [
+      {
+        "id": 1,
+        "section": "Travel",
+        "tags": "",
+        "description": ""
+      },
+      {
+        "id": 2,
+        "section": "Survival",
+        "tags": "",
+        "description": ""
+      },
+      {
+        "id": 3,
+        "section": "Rests",
+        "tags": ["Long Rest", "Short Rest"],
+        "description": ""
+      },
+      {
+        "id": 4,
+        "section": "Random Encounters",
+        "tags": "Combat",
+        "description": ""
+      }
+    ]
+  },
+  {
+    "magic": [
+      {
+        "id": 1,
+        "section": "Who can Use Magic?",
+        "tags": "Class",
+        "description": ""
+      },
+      {
+        "id": 2,
+        "section": "What Spells can I cast?",
+        "tags": "Spell List",
+        "description": ""
+      },
+      {
+        "id": 3,
+        "section": "How may spells can I cast",
+        "tags": "Spell Slot",
+        "description": ""
+      },
+      {
+        "id": 4,
+        "section": "When do I get Spells back?",
+        "tags": "Rest",
+        "description": ""
+      },
+      {
+        "id": 5,
+        "section": "Parts of a Spell",
+        "tags": ["Duration","Target","Range","Components","Cost","Spell Level"],
+        "description": ""
+      },
+      {
+        "id": 6,
+        "section": "Areas of Effect and Durations",
+        "tags": ["Area", "Duration"],
+        "description": ""
+      },
+      {
+        "id": 7,
+        "section": "Concentration",
+        "tags": "Concentration",
+        "description": ""
       }
     ]
   }
