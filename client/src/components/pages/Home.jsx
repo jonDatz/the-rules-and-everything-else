@@ -41,7 +41,7 @@ class Home extends Component {
     console.log('hey I mounted');
     fetch('/api/random/spell')
       .then(res => {
-        // console.log(res);
+        console.log(res);
         if (res) {
         return res.json();
         }
@@ -66,7 +66,7 @@ class Home extends Component {
     fetch('/api/scrape')
       .then(res => {
         // console.log(res);
-        fetch('/articles')
+        fetch('/db/articles')
           .then(res => {
             return res.json()
           })

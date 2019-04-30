@@ -6,7 +6,7 @@ class Profile extends Component {
 
   findOrCreateUser = (user) => {
     console.log('CreateUser Ran');
-    fetch('/user', {
+    fetch('/db/user', {
       method: 'post',
       headers: {
         'Accept': 'application/json, text/plain, */*',
