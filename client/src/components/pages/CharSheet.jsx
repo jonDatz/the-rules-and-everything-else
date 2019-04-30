@@ -7,12 +7,12 @@ import Html2Canvas from 'html2canvas';
 import jsPDF from 'jspdf';
 import ImagesList from '../../items.json';
 
-let list1Array = [ImagesList[0]];
+let list1Array = [];
 
-let list2Array = [ImagesList[1]];
+let list2Array = [];
 
 let bankArray = ImagesList.map(item => item);
-let list3Array = [ImagesList[2]];
+let list3Array = [];
 
 const getItems = (count, offset = 0) =>
   Array.from({ length: count }, (v, k) => k).map(k => ({
@@ -167,49 +167,46 @@ class App extends Component {
   };
 
   render() {
-    console.log(ImagesList);
     return (
-      <React.Fragment>
+      <DragDropContext onDragEnd={this.onDragEnd}>
         <div className="sidenav-spacing">
-          <br />
-          <button onClick={this.print.bind(this)}>Create PDF from List</button>
-          <br />
-          <DragDropContext onDragEnd={this.onDragEnd}>
-            <div className='container'>
-              <div className='row'>
-                <Bank id='bank'>
-                  {this.state.lists.bank.items.map((item, index) => (
-                    <Item key={index} id={item.id} index={index} image={item.image} location='bank' />
+          <div className="container">
+            <div className='row'>
+              <Bank id='bank'>
+                {this.state.lists.bank.items.map((item, index) => (
+                  <Item key={index} id={item.id} index={index} image={item.image} location='bank' />
+                ))}
+              </Bank>
+            </div>
+            <br />
+            <button onClick={this.print.bind(this)}>Create PDF from List</button>
+            <br />
+            <div className='row printTarget' style={{textAlign:"center",margin:"auto"}}>
+              <div className='col s4'>
+                <List id='list_1'>
+                  {this.state.lists.list_1.items.map((item, index) => (
+                    <Item key={index} id={item.id} index={index} image={item.image} />
                   ))}
-                </Bank>
+                </List>
               </div>
-              <div className='row printTarget'>
-                <div className='col s4'>
-                  <List id='list_1'>
-                    {this.state.lists.list_1.items.map((item, index) => (
-                      <Item key={index} id={item.id} index={index} image={item.image} />
-                    ))}
-                  </List>
-                </div>
-                <div className='col s4'>
-                  <List id='list_2'>
-                    {this.state.lists.list_2.items.map((item, index) => (
-                      <Item key={index} id={item.id} index={index} image={item.image} />
-                    ))}
-                  </List>
-                </div>
-                <div className='col s4'>
-                  <List id='list_3'>
-                    {this.state.lists.list_3.items.map((item, index) => (
-                      <Item key={index} id={item.id} index={index} image={item.image} />
-                    ))}
-                  </List>
-                </div>
+              <div className='col s4'>
+                <List id='list_2'>
+                  {this.state.lists.list_2.items.map((item, index) => (
+                    <Item key={index} id={item.id} index={index} image={item.image} />
+                  ))}
+                </List>
+              </div>
+              <div className='col s4'>
+                <List id='list_3'>
+                  {this.state.lists.list_3.items.map((item, index) => (
+                    <Item key={index} id={item.id} index={index} image={item.image} />
+                  ))}
+                </List>
               </div>
             </div>
-          </DragDropContext>
+          </div>
         </div>
-      </React.Fragment>
+      </DragDropContext>
     );
   }
 }

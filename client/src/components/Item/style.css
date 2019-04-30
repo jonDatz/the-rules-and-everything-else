@@ -1,4 +1,15 @@
-.cardCharSheet {
-    margin: 1px;
+.bankCard {
+    margin: 0 auto;
     border-radius: 2.5px;
+    height: 27mm;
+    width: 6rem;
+    background-color: #660303 ;
+}
+
+.listCard {
+    margin: 0 auto;
+    border-radius: 2.5px;
+    height: 264px;
+    width: 240px;
+    background-color: #660303 ;
 }

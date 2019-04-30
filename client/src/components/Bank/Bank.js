@@ -5,7 +5,7 @@ function Bank(props) {
     return (
         <Droppable droppableId={props.id} direction='horizontal'>
             {(provided, snapshot) => (
-                <div className='container-fluid' {...provided.droppableProps}
+                <div className='container' {...provided.droppableProps}
                     ref={provided.innerRef}>
                     {provided.placeholder}
                     <div className='row'>
