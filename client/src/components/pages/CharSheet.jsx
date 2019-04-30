@@ -7,13 +7,6 @@ import Html2Canvas from 'html2canvas';
 import jsPDF from 'jspdf';
 import ImagesList from '../../items.json';
 
-let list1Array = [];
-
-let list2Array = [];
-
-let bankArray = ImagesList.map(item => item);
-let list3Array = [];
-
 const reorder = (list, startIndex, endIndex) => {
   const result = Array.from(list);
   const [removed] = result.splice(startIndex, 1);
@@ -21,7 +14,6 @@ const reorder = (list, startIndex, endIndex) => {
   console.log(result);
   return result;
 };
-
 
 class App extends Component {
 
@@ -69,14 +61,42 @@ class App extends Component {
 
     console.log(draggableId);
     // dropped outside the list
-    if (!destination) {
-      return;
-    }
+
 
     const start = this.state.lists[source.droppableId];
     console.log(start);
 
+    if (!destination && start.id !== 'bank') {
+      console.log()
+      const removeItemsArray = Array.from(start.items);
+      const reducedArray = removeItemsArray.splice(source.index, 1);
+      console.log(reducedArray);
+      const newStart = {
+        ...start,
+        items: removeItemsArray
+      };
+      console.log(newStart);
+      console.log(removeItemsArray)
+
+      const newState = {
+        ...this.state,
+        lists: {
+          ...this.state.lists,
+          [newStart.id]: newStart
+        }
+      };
+
+      this.setState(newState);
+      return;
+    }
+
+    if (!destination) {
+      return
+    }
+
     const finish = this.state.lists[destination.droppableId]
+
+
 
     if (finish.items.length >= 4) {
       return;
@@ -139,12 +159,14 @@ class App extends Component {
     }
 
     const newStartItems = Array.from(start.items);
+    console.log('Array NewStart Items:' + newStartItems);
     const [removed] = newStartItems.splice(source.index, 1);
-    newStartItems.splice(source.index, 1);
     const newStart = {
       ...start,
       items: newStartItems
     };
+    console.log(newStart);
+    console.log(newStartItems)
 
     const newFinishItems = Array.from(finish.items);
     newFinishItems.splice(destination.index, 0, removed);

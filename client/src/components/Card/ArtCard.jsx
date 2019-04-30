@@ -48,7 +48,6 @@ const ArtCard = (props) => {
                                 <tr>
                                   <th>Headline</th>
                                   <th>Summary</th>
-                                  <th>Save</th>
                                 </tr>
                               </thead>
                               <tbody>

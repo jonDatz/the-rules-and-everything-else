@@ -16,6 +16,7 @@ class Home extends Component {
       error: null,
       profile: {}
     };
+    this._isMounted = false;
     this.saveArticle = this.saveArticle.bind(this);
   }
   
@@ -36,11 +37,12 @@ class Home extends Component {
     }).then(res => {
       return res.json();
     }).then(res => {
-      this.setState({savedArticles: res.articles});
+      this._isMounted && this.setState({savedArticles: res.articles});
     });
   };
 
   componentDidMount() {
+    this._isMounted = true;
     let newState = {};
     console.log('hey I mounted');
     fetch('/api/random/spell')
@@ -80,12 +82,14 @@ class Home extends Component {
             newState.articles = res;
             // console.log(this.state);
             console.log(newState);
-            this.setState(newState)
+            this._isMounted && this.setState(newState)
             console.log(this.state);
           })
       });
   }
-
+  componentWillUnmount() {
+    this._isMounted = false;
+  }
   shouldComponentUpdate(nextProps, nextState) {
     return this.state != nextState;
   }

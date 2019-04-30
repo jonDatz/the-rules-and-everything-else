@@ -6,7 +6,7 @@ class Profile extends Component {
 
   constructor(props) {
     super(props);
-
+    this._isMounted = false;
     this.findOrCreateUser = this.findOrCreateUser.bind(this);
   }
 
@@ -18,31 +18,36 @@ class Profile extends Component {
         'Accept': 'application/json, text/plain, */*',
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({ user: user })
+      body: JSON.stringify({ user: user.name })
     }).then(res => {
       console.log(res);
       return res.json();
     }).then(res => {
       console.log(res)
       if (res.articles) {
-        this.setState({ savedArticles: res.articles })
+        this._isMounted && this.setState({ savedArticles: res.articles, profile: user })
       };
     });
   };
 
   componentDidMount() {
+    this._isMounted = true;
     this.setState({ profile: {} });
     const { userProfile, getProfile } = this.props.auth;
     if (!userProfile) {
       getProfile((err, profile) => {
         console.log(profile)
-        this.setState({ profile });
-        this.findOrCreateUser(profile.name);
+        // this.setState({ profile });
+        this.findOrCreateUser(profile);
       });
     } else {
-      this.setState({ profile: userProfile });
-      this.findOrCreateUser(userProfile.name);
+      // this.setState({ profile: userProfile });
+      this.findOrCreateUser(userProfile);
     };
+  }
+
+  componentWillUnmount () {
+    this._isMounted = false;
   }
 
   render() {
