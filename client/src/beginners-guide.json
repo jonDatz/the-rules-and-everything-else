@@ -301,7 +301,7 @@
         "id": 3,
         "section": "Dying, Health, and Saving Throws",
         "tags": ["Death", "Hit Points", "Saving Throws"],
-        "description": ""
+        "description": "Your Hit Points are an important part of your character in combat.  Many people think of Hit Points as literaly that, a numerical representation of how many hits you can take.  That does not have to be the case, your Hit Points can be a measure of how many times you can dodge by a hair or how much grit and determination your character has to keep going.  In combat, your Hit Points will be reduced when an enemy attack or effect causes you damage, but even this can be flavored as you play.  You calculate your maximum Hit Points when you create your character by taking the maximum number from your class's hit dice and adding your constitution modifier.  Then each time you level up you roll your hit die and add your consitution modifier to it and increase your maximum Hit Points by that result.\r\nWhen your Hit Points hit 0 you are knocked unconscious, and begin to make Death Saving throws.  These saving throws are the simplest kind, you roll a d20 and if you get above a 10 you succeed, 10 or lower and you fail.  You make a Death Saving Throw each round when your turn comes up and if you succeed three times you become stabilized and no longer need to make the Death saves.  If you fail three times, however, your character has died.  More dangerously, any time you are dealt damage while unconcious you automatically fail a Death Saving Throw, and if it would be a critical hit you fail 2!  On the bright side, your allies can stabilize you with spells or a medicine check and you no longer need to worry about dying right away.  Even better, if you roll a 20 on a Death Saving throw you gain one Hit Point and are no longer unconcious. That can be a dangerous time, because if you take damage, and after hitting 0 Hit Points the rest of the damage would bring you to half your total Hit Points below 0 that means you have suffered Massive Damage, and your character dies immediately, so beware fighting while low on health. \r\nDeath Saving throws are the least common type of saving throw, hopefully.  When you chose a class it gave you proficiency in two different saves, which means that when the DM asks you to roll one of those saves you get to roll your d20 and add both your proficiency bonus and your Ability Modifier to that roll.  Commonly through combat your character will need to make saves against enemy spells and abilities, the DM will tell you when to roll these saving throws and after your result will tell you whether you passed or failed and any effects that might have occured.  For all saves you get to add the Ability Modifier of that save to your roll, even if it is negative you've gotta."
       },
       {
         "id": 4,
@@ -323,25 +323,25 @@
         "id": 1,
         "section": "Ability Checks and Skill Checks",
         "tags": ["Ability Checks","Skill Checks"],
-        "description": ""
+        "description": "During the course of play your character will encounter situations that require action or reaction.  When those circumstances occur that is the time for an Ability Check.  When the Dungeon Master describes the scenario to you you can ask to take action and describe what your character wishes to do.  The DM might tell you the results of your action or they might ask you to make an Ability check.  When making an Ability check it will be described either as an Ability (Skill) check or sometimes simply as a Skill check (for example: a Wisdom (perception) check or just a perception check).  This tells you what Ability Modifier to use when calculating your total as well as what skill the check is to determine whether you can add your proficiency bonus or not.\r\nTo calculate your total roll your d20 then add the appropriate Ability Modifier and then, if you are proficient in the skill, add your proficiency bonus.  Tell the DM your total score and they will tell you what happens as a result of that score."
       },
       {
         "id": 2,
         "section": "What is Roleplaying?",
         "tags": "Roleplaying",
-        "description": ""
+        "description": "Dungeons and Dragons is not simply a game about rolling dice and combat, an important element of the game is Roleplaying.  While you play you are able to describe the way your character intereacts with other characters and the world at large.  \r\nHave fun with Roleplaying.  If you want to do a voice and speak as if you were your character do it.  If you just want to describe how your character speaks or does soemthing go for it.  Whatever lets you and your friends enjoy the game is what you should do.  \r\nSome DM's might award players for Roleplaying well, and others might not.  Make sure to talk to your DM about what the group expects in terms of Roleplaying and what your level of comfort is with that.  It's a game, it's meant to be fun."
       },
       {
         "id": 3,
         "section": "Your Background",
         "tags": "Background",
-        "description": ""
+        "description": "When you chose your Background it gave some flavor in the books about what a person with that background might be like.  You also either selected or rolled to get a personality Trait, an Ideal, a Bond, and a Flaw from that background.  As with a lot of the flavor we've run into so far, these things are there to help flesh out your character.  The most important thing is YOUR concept for the character, if something in the background doesn't feel right then have a chat with your DM and you'll probably be able to work together to find or create something that feels right.\r\nThe personality traits weren't the only things your background gives you.  You also gain some items and proficiencies that can help define your character even further.  Finally, most backgrounds will grant a background Feature.  These features are primarily not going to have mechanical effects.  These sorts of Features are often called 'Ribbon Abilities.'  They will quite often give you something like a hint of where to find information or allow you to find a NPC that may help you."
       },
       {
         "id": 4,
         "section": "Inspiration",
         "tags": "Inspiration",
-        "description": ""
+        "description": "Inspiration is a new element of Dungeons and Dragons that was introduced in Fifth Edition.  It is usually a reward for a good or cool roleplay moment, but some DM's award it differently.  Each Character can only hold one point of inspiration at a time, and they may spend that point of inspiration at any time to gain Advantage on any given roll.\r\nInspiration is something that is often house-ruled, so be sure to ask your DM if they have a special way they handle it."
       }
     ]
   },
@@ -350,26 +350,26 @@
       {
         "id": 1,
         "section": "Travel",
-        "tags": "",
-        "description": ""
+        "tags": "WIP",
+        "description": "WIP"
       },
       {
         "id": 2,
         "section": "Survival",
-        "tags": "",
-        "description": ""
+        "tags": "WIP",
+        "description": "WIP"
       },
       {
         "id": 3,
         "section": "Rests",
         "tags": ["Long Rest", "Short Rest"],
-        "description": ""
+        "description": "WIP"
       },
       {
         "id": 4,
         "section": "Random Encounters",
         "tags": "Combat",
-        "description": ""
+        "description": "WIP"
       }
     ]
   },
@@ -379,43 +379,43 @@
         "id": 1,
         "section": "Who can Use Magic?",
         "tags": "Class",
-        "description": ""
+        "description": "Many of the Classes are sometimes called 'full-casters'.  They might draw their magical power from different sources, and cast their spells in different ways, but they are all classes where Casting Spells is a major part of their mechanics.\r\nThese Classes are: Bard, Cleric, Druid, Sorcerer, Warlock, and Wizard. \r\nSome other Classes only gain the ability to cast spells after some levels.  These Classes are sometimes called half-casters or third-casters depending on if they gain the ability to cast spells at level 2 or level 3.  These classes use spell casting to support or add to the focus of their base class or concept.\r\nThese classes are: Paladin, Ranger, the Eldritch Knight subclass, and the Arcane Thief subclass."
       },
       {
         "id": 2,
         "section": "What Spells can I cast?",
         "tags": "Spell List",
-        "description": ""
+        "description": "Each Class that can Cast Spells has a Spell List that is found in the back of the book.  In the description of the Class the book will tell you what Spell List to use when looking at what Spells you may cast.  The half- and third-casters don't have their own Spell list, but instead borrow from one of the full-casters.\r\nThe Paladin uses the Cleric Spell List, the Ranger uses the Druid Spell list, and the Eldritch Knight and Arcane Thief use the Wizard Spell List.\r\nThere are two different ways that casters determine what spells they can cast during the game.  A caster can either be a Prepared caster (Druid, Cleric, Paladin, "
       },
       {
         "id": 3,
         "section": "How may spells can I cast",
         "tags": "Spell Slot",
-        "description": ""
+        "description": "WIP"
       },
       {
         "id": 4,
         "section": "When do I get Spells back?",
         "tags": "Rest",
-        "description": ""
+        "description": "WIP"
       },
       {
         "id": 5,
         "section": "Parts of a Spell",
         "tags": ["Duration","Target","Range","Components","Cost","Spell Level"],
-        "description": ""
+        "description": "WIP"
       },
       {
         "id": 6,
         "section": "Areas of Effect and Durations",
         "tags": ["Area", "Duration"],
-        "description": ""
+        "description": "WIP"
       },
       {
         "id": 7,
         "section": "Concentration",
         "tags": "Concentration",
-        "description": ""
+        "description": "WIP"
       }
     ]
   }
