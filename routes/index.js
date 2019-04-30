@@ -6,14 +6,14 @@ const db = require("../models");
 
 // If no API routes are hit, send the React app
 
-router.post('/user', function (req, res) {
+router.post('/db/user', function (req, res) {
   db.User.findOneAndUpdate({email: req.body.user}, {}, {upsert: true}).populate('articles')
   .then(response => {
     res.json(response)
   });
 });
 
-router.get('/articles', function (req, res) {
+router.get('/db/articles', function (req, res) {
   db.Article.find({})
     .then(function (dbArticles) {
       res.json(dbArticles)

@@ -7,12 +7,19 @@ import Profile from '../Profile/Profile';
 import { timingSafeEqual } from "crypto";
 
 class Home extends Component {
-  state = {
-    spell: {},
-    isLoaded: false,
-    error: null,
-    profile: {}
-  };
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      spell: {},
+      isLoaded: false,
+      error: null,
+      profile: {}
+    };
+    this._isMounted = false;
+    this.saveArticle = this.saveArticle.bind(this);
+  }
+  
 
   saveArticle = (id, user) => {
     const savedArticle = {
@@ -30,19 +37,20 @@ class Home extends Component {
     }).then(res => {
       return res.json();
     }).then(res => {
-      this.setState({savedArticles: res.articles});
+      this._isMounted && this.setState({savedArticles: res.articles});
     });
   };
 
-  
-
   componentDidMount() {
+    this._isMounted = true;
     let newState = {};
     console.log('hey I mounted');
     fetch('/api/random/spell')
       .then(res => {
-        // console.log(res);
+        console.log(res);
+        if (res) {
         return res.json();
+        }
       })
       .then((data) => {
         newState.isLoaded = true;
@@ -64,7 +72,7 @@ class Home extends Component {
     fetch('/api/scrape')
       .then(res => {
         // console.log(res);
-        fetch('/articles')
+        fetch('/db/articles')
           .then(res => {
             return res.json()
           })
@@ -74,19 +82,23 @@ class Home extends Component {
             newState.articles = res;
             // console.log(this.state);
             console.log(newState);
-            this.setState(newState)
+            this._isMounted && this.setState(newState)
             console.log(this.state);
           })
       });
   }
-
+  componentWillUnmount() {
+    this._isMounted = false;
+  }
+  shouldComponentUpdate(nextProps, nextState) {
+    return this.state != nextState;
+  }
   render() {
 
     const { error, spell, articles } = this.state;
     const { isAuthenticated } = this.props.auth;
-    console.log(isAuthenticated());
-
     if (error) {
+      console.log('error says hi');
       return (
         <React.Fragment>
           <div className="sidenav-spacing">

@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "name": "Ability Scores",
+    "image": "abilityScoresItem.PNG",
+    "altText": "Ability Scores"
+  },
+  {
+    "id": 2,
+    "name": "Attacks",
+    "image": "attacksItem.PNG",
+    "altText": "Ability Scores"
+  },
+  {
+    "id": 3,
+    "name": "Background",
+    "image": "backgroundItem.PNG",
+    "altText": "Ability Scores"
+  },
+  {
+    "id": 4,
+    "name": "Equipment",
+    "image": "equipmentItem.PNG",
+    "altText": "equipment"
+  },
+  {
+    "id": 5,
+    "name": "hp",
+    "image": "hpItem.PNG",
+    "altText": "hp"
+  },
+  {
+    "id": 6,
+    "name": "money",
+    "image": "moneyItem.PNG",
+    "altText": "money"
+  },
+  {
+    "id": 7,
+    "name": "nameRace",
+    "image": "nameRaceItem.PNG",
+    "altText": "nameRace"
+  },
+  {
+    "id": 8,
+    "name": "saves",
+    "image": "savesItem.PNG",
+    "altText": "saves"
+  },
+  {
+    "id": 9,
+    "name": "skills1",
+    "image": "skills1Item.PNG",
+    "altText": "skills1"
+  },
+  {
+    "id": 10,
+    "name": "skills2",
+    "image": "skills2Item.PNG",
+    "altText": "skills2"
+  },
+  {
+    "id": 11,
+    "name": "spellSlots",
+    "image": "spellSlotsItem.PNG",
+    "altText": "spellSlots"
+  },
+  {
+    "id": 12,
+    "name": "traitsAndFeatures",
+    "image": "traitsAndFeaturesItem.PNG",
+    "altText": "traitsAndFeatures"
+  }
+]
