@@ -1,11 +1,12 @@
 import React from 'react';
+import "./style.css";
 
 function SpellCard(props) {
     return (
         <React.Fragment>
-            <div className="col s12 m5">
-                <div className="card grey darken-4">
-                    <div className="card-content white-text">
+            <div className="col s12 m4">
+                <div className="card deep-purple lighten-5 home-cards">
+                    <div className="card-content black-text">
                         <span className="card-title">Spell of the Day</span>
                         <p>Thanks for Visiting us! </p>
                         <p>Here's a random Spell from the SRD as a reward.</p>
@@ -42,8 +43,9 @@ function SpellCard(props) {
                                 </tr>
                             </tbody>
                         </table>
-                        <p>{props.spell.desc}</p>
-
+                        <div className="scroll scroll1">
+                            <p className="spellDescription">{props.spell.desc}</p>
+                        </div>
                         <div className="card-action">
                             <a href="#">Magic Button</a>
                         </div>

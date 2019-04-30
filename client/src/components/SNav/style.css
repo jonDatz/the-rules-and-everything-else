@@ -3,17 +3,21 @@
 }
 
 .sidenav {
-    background-color: #fffbf7;
+    background-color: #4a494b;
     width: 310px;
 }
 
-.divider {
-    background-color: #d50000;
-    margin: 2px;
+.sidenav .divider {
+    background-color: #673ab7;
+    border-color: #673ab7;
+    margin: 0px;
+    border-style: solid;
 }
 
-.title {
-    /* font-family: 'IBM Plex Sans', sans-serif; */
+.hamburger {
+    border: 0px;
+    background-color: black;
+    margin: 5px;
 }
 
 .title-1 {
@@ -37,14 +41,14 @@
     font-weight: 500;
 }
 
-.login {
-    background-color: #d50000;
+/* .login {
+    background-color: #673ab7;
     color: antiquewhite;
     font-family: 'IBM Plex Sans', sans-serif;
     margin: 20px 0px 0px 80px;
     padding-bottom: 30px;
     align-content: center;
-}
+} */
 
 
 

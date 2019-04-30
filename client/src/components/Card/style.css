@@ -1,0 +1,31 @@
+.spellDescription {
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.article-card {
+
+    overflow: hidden;
+    padding: 0px !important;
+}
+
+.card-title {
+    padding: 10px 4px 4px 5px;
+    font-size: 2.0rem !important;
+    text-align: center;
+    font-family: 'IBM Plex Sans', sans-serif;
+}
+
+.tabContent {
+    width: 100%;
+    padding: 4px !important;
+}
+
+.home-cards {
+    
+    margin: 4px;
+}
+
+.text-color {
+    color: #673ab7;
+}

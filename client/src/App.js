@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Snav from "./components/SNav/SNav";
+import Float from './components/FloatButton/Float';
 import './App.css';
 
 class App extends Component {
@@ -15,6 +16,8 @@ class App extends Component {
     this.props.auth.logout();
   };
 
+
+
   componentDidMount() {
     console.log('app mounted')
 
@@ -25,14 +28,17 @@ class App extends Component {
       console.log('mount ran to renew');
       renewSession()
     }
+
+
   }
 
   render() {
     return (
-      <React.Fragment>
+      <React.Fragment> 
         <Snav auth={this.props.auth} {...this.props} />
         <div className="sidenav-spacing">
         </div>
+        <Float  scrollStepInPx="50" delayInMs="16.66"/>
       </React.Fragment>
     );
   }
