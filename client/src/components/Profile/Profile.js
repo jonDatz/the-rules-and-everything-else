@@ -4,6 +4,12 @@ import SpellCard from '../Card/SpellCard';
 
 class Profile extends Component {
 
+  constructor(props) {
+    super(props);
+
+    this.findOrCreateUser = this.findOrCreateUser.bind(this);
+  }
+
   findOrCreateUser = (user) => {
     console.log('CreateUser Ran');
     fetch('/db/user', {
@@ -38,6 +44,7 @@ class Profile extends Component {
       this.findOrCreateUser(userProfile.name);
     };
   }
+
   render() {
     if (!this.state) {
       return (
@@ -47,7 +54,6 @@ class Profile extends Component {
       )
     } else {
       const { profile, savedArticles } = this.state;
-      console.log(this.state);
       return (
         <React.Fragment>
           <SpellCard spell={this.props.spell} classes={this.props.classes} school={this.props.school} />

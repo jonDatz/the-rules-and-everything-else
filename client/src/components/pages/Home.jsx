@@ -7,12 +7,18 @@ import Profile from '../Profile/Profile';
 import { timingSafeEqual } from "crypto";
 
 class Home extends Component {
-  state = {
-    spell: {},
-    isLoaded: false,
-    error: null,
-    profile: {}
-  };
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      spell: {},
+      isLoaded: false,
+      error: null,
+      profile: {}
+    };
+    this.saveArticle = this.saveArticle.bind(this);
+  }
+  
 
   saveArticle = (id, user) => {
     const savedArticle = {
@@ -33,8 +39,6 @@ class Home extends Component {
       this.setState({savedArticles: res.articles});
     });
   };
-
-  
 
   componentDidMount() {
     let newState = {};
@@ -82,13 +86,15 @@ class Home extends Component {
       });
   }
 
+  shouldComponentUpdate(nextProps, nextState) {
+    return this.state != nextState;
+  }
   render() {
 
     const { error, spell, articles } = this.state;
     const { isAuthenticated } = this.props.auth;
-    console.log(isAuthenticated());
-
     if (error) {
+      console.log('error says hi');
       return (
         <React.Fragment>
           <div className="sidenav-spacing">

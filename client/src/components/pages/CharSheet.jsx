@@ -14,12 +14,6 @@ let list2Array = [];
 let bankArray = ImagesList.map(item => item);
 let list3Array = [];
 
-const getItems = (count, offset = 0) =>
-  Array.from({ length: count }, (v, k) => k).map(k => ({
-    id: `item-${k + offset}`,
-    content: `item ${k + offset}`
-  }));
-
 const reorder = (list, startIndex, endIndex) => {
   const result = Array.from(list);
   const [removed] = result.splice(startIndex, 1);
@@ -30,27 +24,33 @@ const reorder = (list, startIndex, endIndex) => {
 
 
 class App extends Component {
-  state = {
-    lists: {
-      'bank': {
-        id: 'bank',
-        items: bankArray
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      lists: {
+        'bank': {
+          id: 'bank',
+          items: ImagesList.map(item => item)
+        },
+        'list_1': {
+          id: 'list_1',
+          items: []
+        },
+        'list_2': {
+          id: 'list_2',
+          items: []
+        },
+        'list_3': {
+          id: 'list_3',
+          items: []
+        }
       },
-      'list_1': {
-        id: 'list_1',
-        items: list1Array
-      },
-      'list_2': {
-        id: 'list_2',
-        items: list2Array
-      },
-      'list_3': {
-        id: 'list_3',
-        items: list3Array
-      }
-    },
-    idCounter: 18,
-    listOrder: ['list_1', 'list_2', 'list_3']
+      idCounter: 12,
+      listOrder: ['list_1', 'list_2', 'list_3']
+    };
+    this.print = this.print.bind(this);
+    this.onDragEnd = this.onDragEnd.bind(this);
   }
 
   print = () => {
@@ -181,7 +181,7 @@ class App extends Component {
             <br />
             <button onClick={this.print.bind(this)}>Create PDF from List</button>
             <br />
-            <div className='row printTarget' style={{textAlign:"center",margin:"auto"}}>
+            <div className='row printTarget' style={{ textAlign: "center", margin: "auto" }}>
               <div className='col s4'>
                 <List id='list_1'>
                   {this.state.lists.list_1.items.map((item, index) => (
