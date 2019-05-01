@@ -19,7 +19,7 @@ class SNav extends Component {
     const { isAuthenticated } = this.props.auth;
     return (
       <div id="snav">
-        <SideNav trigger={<Button className="hamburger"><i class="material-icons">menu</i></Button>} options={{ closeOnClick: true, draggable: true}} className="sidenav sidenav-fixed">
+        <SideNav trigger={<Button className="hamburger"><i className="material-icons">menu</i></Button>} options={{ closeOnClick: true, draggable: true}} className="sidenav sidenav-fixed">
           <div className="title">
             <h2 className="white-text title-1">The Rules...</h2>
             <h4 className="title-2 white-text">
