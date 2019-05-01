@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { DragDropContext } from "react-beautiful-dnd";
+import { Button } from "react-materialize"; 
 import Item from '../Item/Item';
 import List from '../List/List';
 import Bank from '../Bank/Bank';
@@ -201,7 +202,7 @@ class App extends Component {
               </Bank>
             </div>
             <br />
-            <button onClick={this.print.bind(this)}>Create PDF from List</button>
+            <Button className="pdf-button" onClick={this.print.bind(this)}>Create PDF from List</Button>
             <br />
             <div className='row printTarget' style={{ textAlign: "center", margin: "auto" }}>
               <div className='col s4'>
