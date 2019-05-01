@@ -19,20 +19,20 @@ class SNav extends Component {
     const { isAuthenticated } = this.props.auth;
     return (
       <div id="snav">
-        <SideNav options={{ closeOnClick: true, draggable: true}} className="sidenav sidenav-fixed">
+        <SideNav trigger={<Button className="hamburger"><i class="material-icons">menu</i></Button>} options={{ closeOnClick: true, draggable: true}} className="sidenav sidenav-fixed">
           <div className="title">
-            <h2 className="red-text text-accent-4 title-1">The Rules...</h2>
-            <h4 className="title-2">
+            <h2 className="white-text title-1">The Rules...</h2>
+            <h4 className="title-2 white-text">
               <strong>& Everything Else</strong>
             </h4>
           </div>
           <hr className="divider" />
           <SideNavItem waves onClick={this.goTo.bind(this, "")}>
-            <span className="red-text text-accent-4 sLinks">Home</span>{" "}
+            <span className="white-text sLinks">Home</span>{" "}
           </SideNavItem>
           <hr className="divider" />
           <SideNavItem waves onClick={this.goTo.bind(this, "compendium")}>
-            <span className="red-text text-accent-4 sLinks">
+            <span className="white-text text-accent-4 sLinks">
               Beginner's Compendium
             </span>
           </SideNavItem>
@@ -42,7 +42,7 @@ class SNav extends Component {
             <React.Fragment>
 
                 <SideNavItem waves onClick={this.goTo.bind(this, "charactersheet")}>
-                  <span className="red-text text-accent-4 sLinks">
+                  <span className="white-text text-accent-4 sLinks">
                     Custom Character Sheet
                   </span>
                 </SideNavItem>
@@ -54,17 +54,17 @@ class SNav extends Component {
           
           {!isAuthenticated() && (
             <SideNavItem waves onClick={this.login.bind(this)}>
-                <Button flat waves="light" className="login">
-                Login
-                </Button>
+                <span className="white-text text-accent-4 sLinks"> Login  </span>
             </SideNavItem>
           )}
 
           {isAuthenticated() && (
 
-              <Button onClick={this.logout.bind(this)}  flat waves="light" className="login">
-                Logout
-              </Button>
+
+
+          <SideNavItem waves onClick={this.logout.bind(this)}>
+            <span className="white-text text-accent-4 sLinks"> Logout </span>
+          </SideNavItem>
 
           )}
 
