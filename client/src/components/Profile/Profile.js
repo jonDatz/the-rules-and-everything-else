@@ -11,7 +11,6 @@ class Profile extends Component {
   }
 
   findOrCreateUser = (user) => {
-    console.log('CreateUser Ran');
     fetch('/db/user', {
       method: 'post',
       headers: {
@@ -20,10 +19,8 @@ class Profile extends Component {
       },
       body: JSON.stringify({ user: user.name })
     }).then(res => {
-      console.log(res);
       return res.json();
     }).then(res => {
-      console.log(res)
       if (res.articles) {
         this._isMounted && this.setState({ savedArticles: res.articles, profile: user })
       };
@@ -36,12 +33,9 @@ class Profile extends Component {
     const { userProfile, getProfile } = this.props.auth;
     if (!userProfile) {
       getProfile((err, profile) => {
-        console.log(profile)
-        // this.setState({ profile });
         this.findOrCreateUser(profile);
       });
     } else {
-      // this.setState({ profile: userProfile });
       this.findOrCreateUser(userProfile);
     };
   }

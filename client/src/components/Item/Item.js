@@ -17,17 +17,13 @@ function Item(props) {
                     props.location === 'bank' ? (
                         <div className="col s3 m2">
                             <div className="card bankCard" style={bankStyle} ref={provided.innerRef} {...provided.draggableProps}  {...provided.dragHandleProps}  >
-                                {/* <div className="card-image" style={bankStyle}> */}
-                                    <img src={require(`../../images/${props.image}`)} style={bankStyle} />
-                                {/* </div> */}
+                                <img src={require(`../../images/${props.image}`)} style={bankStyle} />
                             </div>
                         </div>
                     ) : (
 
                             <div className="card listCard" style={itemStyle} ref={provided.innerRef} {...provided.draggableProps}  {...provided.dragHandleProps} >
-                                {/* <div className="card-image" style={itemStyle} > */}
-                                    <img src={require(`../../images/${props.image}`)} style={itemStyle} />
-                                {/* </div> */}
+                                <img src={require(`../../images/${props.image}`)} style={itemStyle} />
                             </div>
                         ))
                 }

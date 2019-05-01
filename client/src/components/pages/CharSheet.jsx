@@ -12,7 +12,6 @@ const reorder = (list, startIndex, endIndex) => {
   const result = Array.from(list);
   const [removed] = result.splice(startIndex, 1);
   result.splice(endIndex, 0, removed);
-  console.log(result);
   return result;
 };
 
@@ -60,24 +59,16 @@ class App extends Component {
 
     const { source, destination, draggableId } = result;
 
-    console.log(draggableId);
-    // dropped outside the list
-
-
     const start = this.state.lists[source.droppableId];
-    console.log(start);
 
+    // Dropped not in a list and didn't come from bank
     if (!destination && start.id !== 'bank') {
-      console.log()
       const removeItemsArray = Array.from(start.items);
-      const reducedArray = removeItemsArray.splice(source.index, 1);
-      console.log(reducedArray);
+      removeItemsArray.splice(source.index, 1);
       const newStart = {
         ...start,
         items: removeItemsArray
       };
-      console.log(newStart);
-      console.log(removeItemsArray)
 
       const newState = {
         ...this.state,
@@ -91,13 +82,15 @@ class App extends Component {
       return;
     }
 
+    // If the item is dropped without a destination and it is from bank then just don't do anything
+
     if (!destination) {
       return
     }
 
     const finish = this.state.lists[destination.droppableId]
 
-
+    // If the drop destination has 4 or more items in it just don't do anything
 
     if (finish.items.length >= 4) {
       return;
@@ -123,13 +116,10 @@ class App extends Component {
       };
 
       this.setState(newState);
-
-      console.log(this.state);
       return;
     }
 
     if (start.id === 'bank') {
-      console.log('bank');
       const bankItems = Array.from(start.items);
       const [removed] = bankItems.splice(source.index, 1);
       const newItem = { id: this.state.idCounter + 1, image: removed.image }
@@ -160,14 +150,11 @@ class App extends Component {
     }
 
     const newStartItems = Array.from(start.items);
-    console.log('Array NewStart Items:' + newStartItems);
     const [removed] = newStartItems.splice(source.index, 1);
     const newStart = {
       ...start,
       items: newStartItems
     };
-    console.log(newStart);
-    console.log(newStartItems)
 
     const newFinishItems = Array.from(finish.items);
     newFinishItems.splice(destination.index, 0, removed);

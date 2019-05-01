@@ -46,9 +46,6 @@ function SpellCard(props) {
                         <div className="scroll scroll1">
                             <p className="spellDescription">{props.spell.desc}</p>
                         </div>
-                        <div className="card-action">
-                            <a href="#">Magic Button</a>
-                        </div>
                     </div>
                 </div>
             </div>
