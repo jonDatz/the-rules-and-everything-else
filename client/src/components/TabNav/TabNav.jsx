@@ -1,10 +1,9 @@
 import React from "react";
-import { Tabs, Tab, Row, Col, Card, CardTitle } from "react-materialize";
-import image from '../../images/castle.jpg';
+import { Tabs, Tab, Row, Col} from "react-materialize";
+
 import "./style.css";
 
 const TabNav = (props) => {
-  console.log(props);
   if (props.tabs === 3 && !props.image1) {
     return (
       <React.Fragment>

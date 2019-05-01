@@ -7,7 +7,6 @@ const Para = (props) => {
     return (
         <div>
             <Parallax className="paraImportant" imageSrc={props.imageSource} />
-            {/* <Parallax imageSrc="http://materializecss.com/images/parallax2.jpg" /> */}
         </div>
             )
 }

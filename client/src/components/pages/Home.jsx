@@ -44,10 +44,8 @@ class Home extends Component {
   componentDidMount() {
     this._isMounted = true;
     let newState = {};
-    console.log('hey I mounted');
     fetch('/api/random/spell')
       .then(res => {
-        console.log(res);
         if (res) {
         return res.json();
         }
@@ -59,7 +57,6 @@ class Home extends Component {
         newState.classes = data.classes.map(item => {
             return item.name
           });
-        console.log(newState)
 
       }, (error) => {
         console.error(error)
@@ -71,19 +68,13 @@ class Home extends Component {
 
     fetch('/api/scrape')
       .then(res => {
-        // console.log(res);
         fetch('/db/articles')
           .then(res => {
             return res.json()
           })
-          .then(res => {
-            console.log('We ran through the article fetch');
-            // console.log(res);
+          .then(res => {       
             newState.articles = res;
-            // console.log(this.state);
-            console.log(newState);
             this._isMounted && this.setState(newState)
-            console.log(this.state);
           })
       });
   }
@@ -98,7 +89,6 @@ class Home extends Component {
     const { error, spell, articles } = this.state;
     const { isAuthenticated } = this.props.auth;
     if (error) {
-      console.log('error says hi');
       return (
         <React.Fragment>
           <div className="sidenav-spacing">
